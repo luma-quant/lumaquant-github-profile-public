@@ -72,15 +72,15 @@ EXPECTED_REPOSITORY_EVIDENCE = {
         "codeql_analysis_id": 1613778562,
     },
     "github-profile": {
-        "head": "624ea78912e67ebc536d0e270446a9ec77563f31",
-        "tree": "ead9651a5c956b0dc02333218dc9ffe3da8889d3",
-        "ci_runs": [31692227539, 31692227634],
-        "codeql_analysis_id": 1612947444,
+        "head": "817c6a65eb1ebee78acacf4c3a516aa2fd25c6d6",
+        "tree": "c691e3da06c3d6e0c6e246f53d09e6522eeeecdc",
+        "ci_runs": [31707575973, 31707576106],
+        "codeql_analysis_id": 1613882333,
     },
     "trust-layer-master": {
-        "head": "dee8a0466f446602c5de0923eb3700f20c6ca19f",
-        "tree": "95f212beab546ba945bc8d79451b1edf71587088",
-        "ci_runs": [31699097582],
+        "head": "a8b2cbe1c9e32d5ebdff8cfcba435d7ca9304e1b",
+        "tree": "81e69b24c0831c2816f414ebe31433d8cfbfafe0",
+        "ci_runs": [31710806734],
         "codeql_analysis_id": None,
     },
 }
@@ -135,8 +135,8 @@ def validate() -> list[str]:
         return errors + [f"metadata unreadable: {type(exc).__name__}"]
 
     expected_release = {
-        "repository": "wotanIII/lumaquant-github-profile-public",
-        "repository_url": "https://github.com/wotanIII/lumaquant-github-profile-public",
+        "repository": "luma-quant/lumaquant-github-profile-public",
+        "repository_url": "https://github.com/luma-quant/lumaquant-github-profile-public",
         "repository_creation_status": "COMPLETED",
         "public_release": "0.1.0-rc1",
         "live_domain": None,
@@ -174,14 +174,29 @@ def validate() -> list[str]:
     else:
         planned = repositories.get("repositories")
         expected_urls = [
-            "https://github.com/wotanIII/luma-engine-evidence-public",
-            "https://github.com/wotanIII/luma-ai-frontend-public",
-            "https://github.com/wotanIII/luma-token-portal-public",
-            "https://github.com/wotanIII/luma-platform-api-public",
-            "https://github.com/wotanIII/luma-corporate-site-public",
-            "https://github.com/wotanIII/lumaquant-github-profile-public",
-            "https://github.com/wotanIII/luma-trust-layer-v1",
+            "https://github.com/luma-quant/luma-engine-evidence-public",
+            "https://github.com/luma-quant/luma-ai-frontend-public",
+            "https://github.com/luma-quant/luma-token-portal-public",
+            "https://github.com/luma-quant/luma-platform-api-public",
+            "https://github.com/luma-quant/luma-corporate-site-public",
+            "https://github.com/luma-quant/lumaquant-github-profile-public",
+            "https://github.com/luma-quant/luma-trust-layer-v1",
         ]
+        if (
+            repositories.get("account_owner") != "luma-quant"
+            or repositories.get("account_type") != "ORGANIZATION"
+            or repositories.get("organization_id") != 316678262
+            or repositories.get("organization_status") != "VERIFIED_CREATED_AND_TRANSFER_COMPLETE"
+        ):
+            errors.append("verified GitHub organization mismatch")
+        transfer = repositories.get("namespace_transfer", {})
+        if (
+            transfer.get("former_owner") != "wotanIII"
+            or transfer.get("former_owner_redirect_status") != "VERIFIED_301_TO_CANONICAL_ORGANIZATION_URLS"
+            or transfer.get("content_changed_by_transfer") is not False
+            or transfer.get("history_rewritten_by_transfer") is not False
+        ):
+            errors.append("GitHub namespace transfer evidence mismatch")
         if not isinstance(planned, list) or [entry.get("url") for entry in planned] != expected_urls:
             errors.append("planned public repository URLs mismatch")
         elif any(
@@ -225,7 +240,7 @@ def validate() -> list[str]:
         if owner_status.get("open_review_matters") != release.get("open_review_matters"):
             errors.append("owner open-review status mismatch")
         master = planned[-1] if isinstance(planned, list) and planned else {}
-        if master.get("verified_public_head") != "dee8a0466f446602c5de0923eb3700f20c6ca19f":
+        if master.get("verified_public_head") != "a8b2cbe1c9e32d5ebdff8cfcba435d7ca9304e1b":
             errors.append("master public HEAD mismatch")
         if master.get("codeql", {}).get("status") != "N/A_NO_CODEQL_ANALYSIS":
             errors.append("master CodeQL applicability mismatch")
@@ -234,12 +249,30 @@ def validate() -> list[str]:
     candidate_hash = release.get("public_candidate_sha256")
     if not isinstance(candidate_hash, str) or len(candidate_hash) != 64:
         errors.append("release candidate SHA-256 invalid")
-    if release.get("public_commit_sha") != "624ea78912e67ebc536d0e270446a9ec77563f31":
+    if release.get("public_commit_sha") != "817c6a65eb1ebee78acacf4c3a516aa2fd25c6d6":
         errors.append("verified profile public commit mismatch")
-    if release.get("public_commit_tree_sha") != "ead9651a5c956b0dc02333218dc9ffe3da8889d3":
+    if release.get("public_commit_tree_sha") != "c691e3da06c3d6e0c6e246f53d09e6522eeeecdc":
         errors.append("verified profile public tree mismatch")
-    if release.get("ci_run_id") != 31692227539 or release.get("codeql_analysis_id") != 1612947444:
+    if release.get("ci_run_id") != 31707575973 or release.get("codeql_analysis_id") != 1613882333:
         errors.append("verified profile CI/CodeQL evidence mismatch")
+    namespace = release.get("github_namespace", {})
+    if (
+        namespace.get("canonical_owner") != "luma-quant"
+        or namespace.get("account_type") != "ORGANIZATION"
+        or namespace.get("organization_id") != 316678262
+        or namespace.get("repository_id") != 1333000739
+        or namespace.get("content_changed_by_transfer") is not False
+        or namespace.get("history_rewritten_by_transfer") is not False
+    ):
+        errors.append("release GitHub organization binding mismatch")
+    initial_root = release.get("initial_publication_root", {})
+    if (
+        initial_root.get("head") != "624ea78912e67ebc536d0e270446a9ec77563f31"
+        or initial_root.get("tree") != "ead9651a5c956b0dc02333218dc9ffe3da8889d3"
+        or initial_root.get("ci_run_id") != 31692227539
+        or initial_root.get("codeql_analysis_id") != 1612947444
+    ):
+        errors.append("historical initial publication root mismatch")
     if release.get("codeql_results_count") != 0 or release.get("codeql_open_alert_count") != 0:
         errors.append("profile CodeQL zero evidence mismatch")
     if release.get("first_prospective_e4", {}).get("included_in_this_publication") is not False:

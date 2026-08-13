@@ -41,13 +41,13 @@
     },
     {
       "path": "CHANGELOG.md",
-      "sha256": "6c34271c0a8658ae29134adcd03e3053f106ea966e6957700dd1e6a1c87b38bc",
-      "size_bytes": 1586
+      "sha256": "7ecf03462d0d09561a41fd7ca886da5b878f1af9b05fc7558b7887481045893b",
+      "size_bytes": 2383
     },
     {
       "path": "KNOWN_LIMITATIONS.md",
-      "sha256": "d1362e0080b52d2d9cba105e3fe287f8c595bf795145c73c513e84179c6e7660",
-      "size_bytes": 1054
+      "sha256": "219f84c10da23a842fd8d6be54266742e6002b0d46d0affb86a681e01585dd4a",
+      "size_bytes": 1213
     },
     {
       "path": "LICENSE.md",
@@ -61,18 +61,18 @@
     },
     {
       "path": "OWNER_GATE_STATUS.json",
-      "sha256": "dd4b06fba2580b2d2a813dfca22fa026cdb4d2e2b2db5800a1bde47710d95230",
-      "size_bytes": 1251
+      "sha256": "911e4283d28fc04e3aef27406a7046ce406a7e3c1fc5763edad344b7521bcd61",
+      "size_bytes": 1524
     },
     {
       "path": "PLANNED_PUBLIC_REPOSITORIES.json",
-      "sha256": "6a3b1c16e716684c720ca6363f3ff43fe4fc8cff6ed8c58d6d00f6c177994f65",
-      "size_bytes": 8871
+      "sha256": "c623562689ad8612f580396d8e8b810864d5faff466f73c87ae6f3a9dac5dffb",
+      "size_bytes": 9397
     },
     {
       "path": "PUBLICATION_STATUS.md",
-      "sha256": "0f0d07175ec67c6f277e69afd282bd53e7c6d4518fc17e232a69029e8fb5ca84",
-      "size_bytes": 1427
+      "sha256": "687913e254824d4151414bb3c3436ea96718cc233d9c3fe0120b643f4a7999e7",
+      "size_bytes": 1585
     },
     {
       "path": "PUBLIC_PRIVATE_BOUNDARY.md",
@@ -81,33 +81,33 @@
     },
     {
       "path": "README.md",
-      "sha256": "b48178d873312813fafaef063967dd3f21686fc4d1d374a882ad4fc141c0e083",
-      "size_bytes": 3054
+      "sha256": "e5a54d7500d9132d1fff3b186f4be45d155c3705adfcac2adfe3f57895502f83",
+      "size_bytes": 3320
     },
     {
       "path": "RELEASE.json",
-      "sha256": "fc5af136d5f257fd2099166d48c06d8387e60da97d7063adbdd776a2b260f801",
-      "size_bytes": 3116
+      "sha256": "6db7db421c4a9bdd32a210f0632051b2777efe6f8deb27a4041df723ee24fbfc",
+      "size_bytes": 3815
     },
     {
       "path": "SBOM.cdx.json",
-      "sha256": "68a5cb0739e898b9853262daa9ecc739db2fd8a172cec73688a88718f0920f31",
-      "size_bytes": 1015
+      "sha256": "f94ac166baa121d219c296d4e7dd594c8f0f17f762fe5c6099fba95df187d3fe",
+      "size_bytes": 1180
     },
     {
       "path": "SBOM.spdx.json",
-      "sha256": "4d4addf0ef81c36a604a00204ecd7496ee7762680a690bf5e8869d4a5828548d",
-      "size_bytes": 1076
+      "sha256": "f4c0267a6add59a4b08d1105ce82a3427aa9869c6764c620f3d723bf3e92472b",
+      "size_bytes": 1126
     },
     {
       "path": "SECURITY.md",
-      "sha256": "d8a48870a7bc1379e796b1a9542c46636d33513b992910b1989686e43f2abecd",
-      "size_bytes": 876
+      "sha256": "f6d06d66073798b73e31abf0fd52b12a842ecb8c205f534e33a62f67dc6879c6",
+      "size_bytes": 922
     },
     {
       "path": "profile/README.md",
-      "sha256": "43b7addf3a0b71b762cef61b3ba2eadd60ac07ec361d2e8a5cfef6f48ce9bac1",
-      "size_bytes": 3135
+      "sha256": "69354aa75a8af109b110045b4293d37c96327e9eb21e3e87361ff45eeae8310b",
+      "size_bytes": 3166
     },
     {
       "path": "scripts/build_archive.py",
@@ -121,8 +121,8 @@
     },
     {
       "path": "scripts/generate_sbom.py",
-      "sha256": "8d600369222767af8225fa70c0265ecc12c196d816b05ee3080b5f9a0440311a",
-      "size_bytes": 3952
+      "sha256": "1e7714f4e74a8e7274320a982924d26275ffb71464e71d9b53d0075d6549d6a5",
+      "size_bytes": 4080
     },
     {
       "path": "scripts/secret_scan.py",
@@ -131,13 +131,13 @@
     },
     {
       "path": "scripts/validate_candidate.py",
-      "sha256": "5bc43ec9c72d19af7cfa40b3ba9906c24832d8ec3f23f7d384da0f970dabecd5",
-      "size_bytes": 15727
+      "sha256": "b720d33ade5b5d94d162f265b230ef05d730c8100a500767db12936e438f4a22",
+      "size_bytes": 17533
     },
     {
       "path": "tests/test_candidate.py",
-      "sha256": "60c7e56ed17017725f337af1f5ef5ff4c407f9a0a2291df5439b19f9af029497",
-      "size_bytes": 6299
+      "sha256": "0ed4284ff2975889c06a7a955ac84d62537af46eb7c41348f1e1fe1045501ddb",
+      "size_bytes": 7463
     }
   ],
   "included_file_count": 26,
@@ -157,9 +157,9 @@
   "publication_performed": true,
   "publication_status": "PUBLIC_REPOSITORY_VERIFIED",
   "release_class": "REFERENCE_IMPLEMENTATION",
-  "repository": "wotanIII/lumaquant-github-profile-public",
+  "repository": "luma-quant/lumaquant-github-profile-public",
   "repository_creation_status": "COMPLETED",
-  "repository_url": "https://github.com/wotanIII/lumaquant-github-profile-public",
+  "repository_url": "https://github.com/luma-quant/lumaquant-github-profile-public",
   "schema_version": "1.0.0",
   "source_private_commit_sha": null
 }

@@ -5,6 +5,12 @@
   "metadata": {
     "component": {
       "copyright": "Copyright 2026 Luma Quant e.U. All rights reserved.",
+      "externalReferences": [
+        {
+          "type": "vcs",
+          "url": "https://github.com/luma-quant/lumaquant-github-profile-public"
+        }
+      ],
       "licenses": [
         {
           "license": {
@@ -37,7 +43,7 @@
       ]
     }
   },
-  "serialNumber": "urn:uuid:50c88643-0770-5f82-89ba-0eeb44876c7a",
+  "serialNumber": "urn:uuid:e6cc081e-bc10-5c45-82e9-5c1be347011c",
   "specVersion": "1.6",
   "version": 1
 }

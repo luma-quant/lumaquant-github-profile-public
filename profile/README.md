@@ -7,19 +7,20 @@ owner-confirmed and not independently registry-verified.
 
 ## Public Trust Layer repositories
 
-All seven Trust Layer repositories below are public in the verified owner
-namespace `wotanIII`. Their point-in-time HEAD, tree, CI and CodeQL evidence is
-recorded in [`PLANNED_PUBLIC_REPOSITORIES.json`](../PLANNED_PUBLIC_REPOSITORIES.json).
+All seven Trust Layer repositories below are public in the verified GitHub
+organization `luma-quant`. Their point-in-time pre-rebind HEAD, tree, CI and
+CodeQL evidence is recorded in
+[`PLANNED_PUBLIC_REPOSITORIES.json`](../PLANNED_PUBLIC_REPOSITORIES.json).
 
 | Area | Public repository | Evidence class |
 | --- | --- | --- |
-| Engine | [luma-engine-evidence-public](https://github.com/wotanIII/luma-engine-evidence-public) | Versioned contracts, commitments and verifier evidence; E4 remains separately governed |
-| Quant Lab | [luma-ai-frontend-public](https://github.com/wotanIII/luma-ai-frontend-public) | Sanitized production frontend source |
-| Token portal | [luma-token-portal-public](https://github.com/wotanIII/luma-token-portal-public) | Read-only trust surface and source-bound, point-in-time token facts |
-| Platform boundary | [luma-platform-api-public](https://github.com/wotanIII/luma-platform-api-public) | Source-bound API contract plus a bounded runnable reference adapter; not the production backend |
-| Company | [luma-corporate-site-public](https://github.com/wotanIII/luma-corporate-site-public) | Corporate website and Trust Center source |
-| GitHub profile | [lumaquant-github-profile-public](https://github.com/wotanIII/lumaquant-github-profile-public) | Documentation-only profile and navigation source |
-| Trust Layer v1.0 | [luma-trust-layer-v1](https://github.com/wotanIII/luma-trust-layer-v1) | Master public source and evidence index |
+| Engine | [luma-engine-evidence-public](https://github.com/luma-quant/luma-engine-evidence-public) | Versioned contracts, commitments and verifier evidence; E4 remains separately governed |
+| Quant Lab | [luma-ai-frontend-public](https://github.com/luma-quant/luma-ai-frontend-public) | Sanitized production frontend source |
+| Token portal | [luma-token-portal-public](https://github.com/luma-quant/luma-token-portal-public) | Read-only trust surface and source-bound, point-in-time token facts |
+| Platform boundary | [luma-platform-api-public](https://github.com/luma-quant/luma-platform-api-public) | Source-bound API contract plus a bounded runnable reference adapter; not the production backend |
+| Company | [luma-corporate-site-public](https://github.com/luma-quant/luma-corporate-site-public) | Corporate website and Trust Center source |
+| GitHub profile | [lumaquant-github-profile-public](https://github.com/luma-quant/lumaquant-github-profile-public) | Documentation-only profile and navigation source |
+| Trust Layer v1.0 | [luma-trust-layer-v1](https://github.com/luma-quant/luma-trust-layer-v1) | Master public source and evidence index |
 
 Private engine, payment, signing, treasury, user-data, administrative and
 deployment control planes remain intentionally excluded. The Token Portal

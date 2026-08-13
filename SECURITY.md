@@ -3,8 +3,9 @@
 ## Supported versions
 
 This documentation-only `v0.1.0-rc1` source snapshot is public at
-`wotanIII/lumaquant-github-profile-public`. Its initial public validation and
-CodeQL runs passed. This statement does not claim an independent security audit.
+`luma-quant/lumaquant-github-profile-public`. Its transferred pre-rebind public
+HEAD has successful validation and zero-result CodeQL evidence. This statement
+does not claim an independent security audit.
 
 ## Reporting a concern
 

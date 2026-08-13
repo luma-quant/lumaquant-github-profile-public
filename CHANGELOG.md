@@ -1,5 +1,19 @@
 # Changelog
 
+## GitHub organization namespace alignment - 2026-08-13
+
+- Recorded the verified, content-preserving transfer of all seven Trust Layer
+  repositories from the personal `wotanIII` namespace to the `luma-quant`
+  GitHub organization.
+- Rebound current repository, profile, registry, evidence, generator, validator
+  and test URLs to the canonical organization while preserving historical
+  publication facts and the verified noreply commit identity.
+- Updated the profile and Master entries to their transferred pre-rebind
+  HEAD/tree and current successful CI/CodeQL evidence without creating a cyclic
+  binding to a future Master status-only commit.
+- Kept Legal Review and the independent third-party audit open, E4 separate,
+  and payments, delivery, refund automation and deployment disabled.
+
 ## Post-publication status alignment - 2026-08-13
 
 - Recorded all seven Trust Layer repository URLs as public and verified under

@@ -27,6 +27,14 @@
     "independent_verification": "NOT_PERFORMED",
     "response_time_sla": "NOT_CLAIMED"
   },
+  "github_namespace": {
+    "status": "COMPLETED_TRANSFER_VERIFIED",
+    "account_type": "ORGANIZATION",
+    "canonical_owner": "luma-quant",
+    "organization_id": 316678262,
+    "former_owner": "wotanIII",
+    "former_owner_redirect_status": "VERIFIED_301_REDIRECT"
+  },
   "publication_performed": true,
   "publication_status": "PUBLIC_REPOSITORY_VERIFIED",
   "open_review_matters": [

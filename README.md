@@ -4,11 +4,12 @@ Status: **PUBLIC_REPOSITORY_VERIFIED**
 Publication performed: **YES**
 
 This documentation-only repository is public at
-[wotanIII/lumaquant-github-profile-public](https://github.com/wotanIII/lumaquant-github-profile-public).
-The initial public root `624ea78912e67ebc536d0e270446a9ec77563f31`,
-its public CI and its CodeQL analysis were verified on 13 August 2026. The
-repository lives in the owner account `wotanIII`; no separate LUMA Quant GitHub
-organization is asserted.
+[luma-quant/lumaquant-github-profile-public](https://github.com/luma-quant/lumaquant-github-profile-public).
+The transferred pre-rebind HEAD `817c6a65eb1ebee78acacf4c3a516aa2fd25c6d6`,
+its tree, public CI and zero-result CodeQL analysis were verified on 13 August
+2026. All seven Trust Layer repositories are now in the verified `luma-quant`
+GitHub organization. Their former `wotanIII` URLs redirect to the canonical
+organization URLs; the transfer itself changed neither content nor history.
 
 ## Scope and evidence class
 
@@ -32,7 +33,8 @@ authoritative point-in-time registry for all seven public Trust Layer
 repositories. It records their exact verified URLs, audited public HEADs and
 trees, successful CI runs and CodeQL evidence. The Master index correctly uses
 `N/A_NO_CODEQL_ANALYSIS`: it contains an index verifier and Gitleaks, but no
-CodeQL workflow.
+CodeQL workflow. The Master binding is deliberately the transferred
+pre-rebind HEAD, avoiding a cyclic claim about a later status-only commit.
 
 The first prospective E4 commitment and reveal remains separate and
 `NOT_YET_COMPLETED`. This publication does not enable real payments, token

@@ -20,9 +20,15 @@ class ProfileCandidateTests(unittest.TestCase):
         self.assertEqual("COMPLETED", release["repository_creation_status"])
         self.assertTrue(release["publication_performed"])
         self.assertEqual("PUBLIC_REPOSITORY_VERIFIED", release["publication_status"])
-        self.assertEqual("624ea78912e67ebc536d0e270446a9ec77563f31", release["public_commit_sha"])
-        self.assertEqual(31692227539, release["ci_run_id"])
-        self.assertEqual(1612947444, release["codeql_analysis_id"])
+        self.assertEqual("817c6a65eb1ebee78acacf4c3a516aa2fd25c6d6", release["public_commit_sha"])
+        self.assertEqual(31707575973, release["ci_run_id"])
+        self.assertEqual(1613882333, release["codeql_analysis_id"])
+        self.assertEqual("luma-quant", release["github_namespace"]["canonical_owner"])
+        self.assertFalse(release["github_namespace"]["content_changed_by_transfer"])
+        self.assertEqual(
+            "624ea78912e67ebc536d0e270446a9ec77563f31",
+            release["initial_publication_root"]["head"],
+        )
         self.assertEqual(0, release["codeql_results_count"])
         self.assertEqual(0, release["codeql_open_alert_count"])
         self.assertEqual("COMPLETED_OWNER_CONFIRMED", release["operator_identity_status"])
@@ -42,11 +48,15 @@ class ProfileCandidateTests(unittest.TestCase):
 
     def test_all_seven_repository_targets_are_public_and_verified(self) -> None:
         plan = json.loads((ROOT / "PLANNED_PUBLIC_REPOSITORIES.json").read_text(encoding="utf-8"))
-        self.assertEqual("wotanIII", plan["account_owner"])
-        self.assertEqual("NO_SEPARATE_GITHUB_ORGANIZATION_CONFIRMED", plan["organization_status"])
+        self.assertEqual("luma-quant", plan["account_owner"])
+        self.assertEqual("ORGANIZATION", plan["account_type"])
+        self.assertEqual(316678262, plan["organization_id"])
+        self.assertEqual("VERIFIED_CREATED_AND_TRANSFER_COMPLETE", plan["organization_status"])
+        self.assertEqual("wotanIII", plan["namespace_transfer"]["former_owner"])
+        self.assertFalse(plan["namespace_transfer"]["content_changed_by_transfer"])
         self.assertEqual(7, len(plan["repositories"]))
         for entry in plan["repositories"]:
-            self.assertTrue(entry["url"].startswith("https://github.com/wotanIII/"))
+            self.assertTrue(entry["url"].startswith("https://github.com/luma-quant/"))
             self.assertEqual("COMPLETED", entry["repository_creation_status"])
             self.assertEqual("VERIFIED", entry["url_verification_status"])
             self.assertTrue(entry["publication_performed"])
@@ -54,7 +64,7 @@ class ProfileCandidateTests(unittest.TestCase):
             self.assertEqual("main", entry["default_branch"])
             self.assertEqual("PASS_AT_VERIFIED_PUBLIC_HEAD", entry["ci"]["status"])
         self.assertEqual(
-            "dee8a0466f446602c5de0923eb3700f20c6ca19f",
+            "a8b2cbe1c9e32d5ebdff8cfcba435d7ca9304e1b",
             plan["repositories"][-1]["verified_public_head"],
         )
         self.assertEqual("N/A_NO_CODEQL_ANALYSIS", plan["repositories"][-1]["codeql"]["status"])
@@ -67,8 +77,8 @@ class ProfileCandidateTests(unittest.TestCase):
             "token-portal": ("b26bb211ec1c063e7fa2cdd36d0f085f01f3301a", 31704480279, 1613670899),
             "platform-api": ("44b9b15d1dbd2e70e3c4db8764f10bbae14c608c", 31705801892, 1613761037),
             "corporate-site": ("49ed20aae24b1832081a89f37eeb1007b1c72816", 31706078911, 1613778562),
-            "github-profile": ("624ea78912e67ebc536d0e270446a9ec77563f31", 31692227539, 1612947444),
-            "trust-layer-master": ("dee8a0466f446602c5de0923eb3700f20c6ca19f", 31699097582, None),
+            "github-profile": ("817c6a65eb1ebee78acacf4c3a516aa2fd25c6d6", 31707575973, 1613882333),
+            "trust-layer-master": ("a8b2cbe1c9e32d5ebdff8cfcba435d7ca9304e1b", 31710806734, None),
         }
         for entry in plan["repositories"]:
             head, first_ci, analysis = expected[entry["candidate"]]
@@ -102,6 +112,16 @@ class ProfileCandidateTests(unittest.TestCase):
         self.assertEqual(0, inventory["asset_count"])
         self.assertEqual(0, inventory["unresolved_asset_count"])
         self.assertEqual([], inventory["assets"])
+
+    def test_sboms_bind_the_canonical_organization_repository(self) -> None:
+        cyclonedx = json.loads((ROOT / "SBOM.cdx.json").read_text(encoding="utf-8"))
+        spdx = json.loads((ROOT / "SBOM.spdx.json").read_text(encoding="utf-8"))
+        expected_url = "https://github.com/luma-quant/lumaquant-github-profile-public"
+        self.assertEqual(
+            expected_url,
+            cyclonedx["metadata"]["component"]["externalReferences"][0]["url"],
+        )
+        self.assertEqual(expected_url, spdx["packages"][0]["downloadLocation"])
 
     def test_candidate_validator(self) -> None:
         result = subprocess.run(

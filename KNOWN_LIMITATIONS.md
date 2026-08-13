@@ -1,9 +1,11 @@
 # Known limitations
 
-- The public namespace is the owner account `wotanIII`; no separate LUMA Quant
-  GitHub organization is asserted.
-- The seven repository records are a point-in-time verification snapshot. A
-  later commit does not invalidate the recorded audited publication HEAD.
+- The public namespace is the verified GitHub organization `luma-quant`. The
+  former personal-namespace URLs under `wotanIII` remain historical facts and
+  redirect to the canonical organization URLs.
+- The seven repository records are a point-in-time transfer snapshot. A later
+  status-only commit does not invalidate the recorded audited pre-rebind HEAD;
+  the Master is not cyclically bound to a future status commit.
 - Manifested text bytes are canonical LF bytes under `.gitattributes`; this is
   part of the reproducibility boundary.
 - This is a documentation reference repository, not a production source mirror.

@@ -1,17 +1,18 @@
 # Publication status
 
 - Version: `v0.1.0-rc1`
-- Public repository: [wotanIII/lumaquant-github-profile-public](https://github.com/wotanIII/lumaquant-github-profile-public)
+- Public repository: [luma-quant/lumaquant-github-profile-public](https://github.com/luma-quant/lumaquant-github-profile-public)
+- GitHub namespace: verified organization `luma-quant` (organization ID `316678262`); former `wotanIII` URL redirects
 - Repository creation: `COMPLETED`
 - Visibility: `PUBLIC`
 - URL verification: `VERIFIED`
-- Verified initial public HEAD: `624ea78912e67ebc536d0e270446a9ec77563f31`
-- Verified initial public tree: `ead9651a5c956b0dc02333218dc9ffe3da8889d3`
+- Verified pre-organization-rebind public HEAD: `817c6a65eb1ebee78acacf4c3a516aa2fd25c6d6`
+- Verified pre-organization-rebind public tree: `c691e3da06c3d6e0c6e246f53d09e6522eeeecdc`
 - Publication review: `INDEPENDENT_PUBLICATION_REVIEW_PASSED`
 - Publication: `PUBLIC_REPOSITORY_VERIFIED`
 - Publication performed: `true`
-- CI: [run 31692227539](https://github.com/wotanIII/lumaquant-github-profile-public/actions/runs/31692227539) — `success`
-- CodeQL: [run 31692227634](https://github.com/wotanIII/lumaquant-github-profile-public/actions/runs/31692227634), analysis `1612947444` — `0` results / `0` open alerts
+- CI: [run 31707575973](https://github.com/luma-quant/lumaquant-github-profile-public/actions/runs/31707575973) — `success`
+- CodeQL: [run 31707576106](https://github.com/luma-quant/lumaquant-github-profile-public/actions/runs/31707576106), analysis `1613882333` — `0` results / `0` open alerts
 - Artifact type: `DOCUMENTATION_PROFILE_PUBLIC_STATUS`
 - Release class: `REFERENCE_IMPLEMENTATION`
 - Production alignment: `REFERENCE_ONLY`

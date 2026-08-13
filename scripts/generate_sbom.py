@@ -25,6 +25,7 @@ def canonical_json(data: object) -> bytes:
 def documents() -> dict[Path, bytes]:
     release = json.loads(RELEASE_PATH.read_text(encoding="utf-8"))
     repository = release["repository"]
+    repository_url = release["repository_url"]
     version = release["public_release"]
     timestamp = release["exported_at_utc"]
     identity = f"{repository}@{version}"
@@ -39,6 +40,7 @@ def documents() -> dict[Path, bytes]:
                 "copyright": "Copyright 2026 Luma Quant e.U. All rights reserved.",
                 "licenses": [{"license": {"id": "LicenseRef-LumaQuant-Proprietary"}}],
                 "name": "lumaquant-github-profile",
+                "externalReferences": [{"type": "vcs", "url": repository_url}],
                 "properties": [
                     {"name": "luma:artifact_type", "value": release["artifact_type"]},
                     {"name": "luma:third_party_runtime_component_count", "value": "0"},
@@ -72,7 +74,7 @@ def documents() -> dict[Path, bytes]:
             {
                 "SPDXID": package_spdx_id,
                 "copyrightText": "Copyright 2026 Luma Quant e.U. All rights reserved.",
-                "downloadLocation": "NOASSERTION",
+                "downloadLocation": repository_url,
                 "filesAnalyzed": False,
                 "licenseConcluded": "LicenseRef-LumaQuant-Proprietary",
                 "licenseDeclared": "LicenseRef-LumaQuant-Proprietary",

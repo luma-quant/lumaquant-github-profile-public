@@ -7,13 +7,13 @@
     ]
   },
   "dataLicense": "CC0-1.0",
-  "documentNamespace": "urn:uuid:50c88643-0770-5f82-89ba-0eeb44876c7a",
+  "documentNamespace": "urn:uuid:e6cc081e-bc10-5c45-82e9-5c1be347011c",
   "name": "lumaquant-github-profile-0.1.0-rc1",
   "packages": [
     {
       "SPDXID": "SPDXRef-Package-lumaquant-github-profile",
       "copyrightText": "Copyright 2026 Luma Quant e.U. All rights reserved.",
-      "downloadLocation": "NOASSERTION",
+      "downloadLocation": "https://github.com/luma-quant/lumaquant-github-profile-public",
       "filesAnalyzed": false,
       "licenseConcluded": "LicenseRef-LumaQuant-Proprietary",
       "licenseDeclared": "LicenseRef-LumaQuant-Proprietary",

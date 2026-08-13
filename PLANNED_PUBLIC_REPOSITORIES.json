@@ -1,9 +1,18 @@
 {
-  "schema_version": "2.0",
-  "account_owner": "wotanIII",
-  "organization_status": "NO_SEPARATE_GITHUB_ORGANIZATION_CONFIRMED",
-  "verified_at_utc": "2026-08-13T13:45:32Z",
-  "status_semantics": "Point-in-time GitHub evidence for the seven public Trust Layer repositories. Verified HEADs identify the audited publication state and are not self-referential claims about later status-only commits.",
+  "schema_version": "2.1",
+  "account_owner": "luma-quant",
+  "account_type": "ORGANIZATION",
+  "organization_id": 316678262,
+  "organization_status": "VERIFIED_CREATED_AND_TRANSFER_COMPLETE",
+  "verified_at_utc": "2026-08-13T18:00:13.8577395Z",
+  "status_semantics": "Point-in-time GitHub transfer evidence for the seven public Trust Layer repositories. Verified HEADs identify the transferred pre-rebind publication state. Later status-only commits do not invalidate the snapshot, and the Master binding intentionally avoids a cyclic claim about a future status commit.",
+  "namespace_transfer": {
+    "former_owner": "wotanIII",
+    "former_owner_redirect_status": "VERIFIED_301_TO_CANONICAL_ORGANIZATION_URLS",
+    "transfer_report_status": "FROZEN_SERIAL_TRANSFER_COMPLETE",
+    "content_changed_by_transfer": false,
+    "history_rewritten_by_transfer": false
+  },
   "open_review_matters": [
     "LEGAL_REVIEW_NOT_YET_COMPLETED",
     "INDEPENDENT_THIRD_PARTY_AUDIT_NOT_YET_COMPLETED"
@@ -22,8 +31,8 @@
   "repositories": [
     {
       "candidate": "engine-evidence",
-      "repository": "wotanIII/luma-engine-evidence-public",
-      "url": "https://github.com/wotanIII/luma-engine-evidence-public",
+      "repository": "luma-quant/luma-engine-evidence-public",
+      "url": "https://github.com/luma-quant/luma-engine-evidence-public",
       "repository_creation_status": "COMPLETED",
       "url_verification_status": "VERIFIED",
       "publication_performed": true,
@@ -34,10 +43,10 @@
       "ci": {
         "status": "PASS_AT_VERIFIED_PUBLIC_HEAD",
         "runs": [
-          {"id": 31703977937, "name": "Validate Evidence", "url": "https://github.com/wotanIII/luma-engine-evidence-public/actions/runs/31703977937", "conclusion": "success"},
-          {"id": 31703977901, "name": "Public Security", "url": "https://github.com/wotanIII/luma-engine-evidence-public/actions/runs/31703977901", "conclusion": "success"},
-          {"id": 31703977831, "name": "Checksum Portability", "url": "https://github.com/wotanIII/luma-engine-evidence-public/actions/runs/31703977831", "conclusion": "success"},
-          {"id": 31703977872, "name": "CodeQL", "url": "https://github.com/wotanIII/luma-engine-evidence-public/actions/runs/31703977872", "conclusion": "success"}
+          {"id": 31703977937, "name": "Validate Evidence", "url": "https://github.com/luma-quant/luma-engine-evidence-public/actions/runs/31703977937", "conclusion": "success"},
+          {"id": 31703977901, "name": "Public Security", "url": "https://github.com/luma-quant/luma-engine-evidence-public/actions/runs/31703977901", "conclusion": "success"},
+          {"id": 31703977831, "name": "Checksum Portability", "url": "https://github.com/luma-quant/luma-engine-evidence-public/actions/runs/31703977831", "conclusion": "success"},
+          {"id": 31703977872, "name": "CodeQL", "url": "https://github.com/luma-quant/luma-engine-evidence-public/actions/runs/31703977872", "conclusion": "success"}
         ]
       },
       "codeql": {"status": "PASS_ZERO_RESULTS_ZERO_OPEN_ALERTS", "analysis_id": 1613639143, "results_count": 0, "open_alert_count": 0, "rules_count": 43},
@@ -45,8 +54,8 @@
     },
     {
       "candidate": "ai-frontend",
-      "repository": "wotanIII/luma-ai-frontend-public",
-      "url": "https://github.com/wotanIII/luma-ai-frontend-public",
+      "repository": "luma-quant/luma-ai-frontend-public",
+      "url": "https://github.com/luma-quant/luma-ai-frontend-public",
       "repository_creation_status": "COMPLETED",
       "url_verification_status": "VERIFIED",
       "publication_performed": true,
@@ -57,16 +66,16 @@
       "ci": {
         "status": "PASS_AT_VERIFIED_PUBLIC_HEAD",
         "runs": [
-          {"id": 31704278130, "name": "Public source verification", "url": "https://github.com/wotanIII/luma-ai-frontend-public/actions/runs/31704278130", "conclusion": "success"},
-          {"id": 31704278127, "name": "CodeQL", "url": "https://github.com/wotanIII/luma-ai-frontend-public/actions/runs/31704278127", "conclusion": "success"}
+          {"id": 31704278130, "name": "Public source verification", "url": "https://github.com/luma-quant/luma-ai-frontend-public/actions/runs/31704278130", "conclusion": "success"},
+          {"id": 31704278127, "name": "CodeQL", "url": "https://github.com/luma-quant/luma-ai-frontend-public/actions/runs/31704278127", "conclusion": "success"}
         ]
       },
       "codeql": {"status": "PASS_ZERO_RESULTS_ZERO_OPEN_ALERTS", "analysis_id": 1613660523, "results_count": 0, "open_alert_count": 0, "rules_count": 87}
     },
     {
       "candidate": "token-portal",
-      "repository": "wotanIII/luma-token-portal-public",
-      "url": "https://github.com/wotanIII/luma-token-portal-public",
+      "repository": "luma-quant/luma-token-portal-public",
+      "url": "https://github.com/luma-quant/luma-token-portal-public",
       "repository_creation_status": "COMPLETED",
       "url_verification_status": "VERIFIED",
       "publication_performed": true,
@@ -77,15 +86,15 @@
       "ci": {
         "status": "PASS_AT_VERIFIED_PUBLIC_HEAD",
         "runs": [
-          {"id": 31704480279, "name": "trust-reference-ci", "url": "https://github.com/wotanIII/luma-token-portal-public/actions/runs/31704480279", "conclusion": "success"}
+          {"id": 31704480279, "name": "trust-reference-ci", "url": "https://github.com/luma-quant/luma-token-portal-public/actions/runs/31704480279", "conclusion": "success"}
         ]
       },
       "codeql": {"status": "PASS_ZERO_RESULTS_ZERO_OPEN_ALERTS", "analysis_id": 1613670899, "results_count": 0, "open_alert_count": 0, "rules_count": 87}
     },
     {
       "candidate": "platform-api",
-      "repository": "wotanIII/luma-platform-api-public",
-      "url": "https://github.com/wotanIII/luma-platform-api-public",
+      "repository": "luma-quant/luma-platform-api-public",
+      "url": "https://github.com/luma-quant/luma-platform-api-public",
       "repository_creation_status": "COMPLETED",
       "url_verification_status": "VERIFIED",
       "publication_performed": true,
@@ -96,15 +105,15 @@
       "ci": {
         "status": "PASS_AT_VERIFIED_PUBLIC_HEAD",
         "runs": [
-          {"id": 31705801892, "name": "validate-public-contract", "url": "https://github.com/wotanIII/luma-platform-api-public/actions/runs/31705801892", "conclusion": "success"}
+          {"id": 31705801892, "name": "validate-public-contract", "url": "https://github.com/luma-quant/luma-platform-api-public/actions/runs/31705801892", "conclusion": "success"}
         ]
       },
       "codeql": {"status": "PASS_ZERO_RESULTS_ZERO_OPEN_ALERTS", "analysis_id": 1613761037, "results_count": 0, "open_alert_count": 0, "rules_count": 172}
     },
     {
       "candidate": "corporate-site",
-      "repository": "wotanIII/luma-corporate-site-public",
-      "url": "https://github.com/wotanIII/luma-corporate-site-public",
+      "repository": "luma-quant/luma-corporate-site-public",
+      "url": "https://github.com/luma-quant/luma-corporate-site-public",
       "repository_creation_status": "COMPLETED",
       "url_verification_status": "VERIFIED",
       "publication_performed": true,
@@ -115,8 +124,8 @@
       "ci": {
         "status": "PASS_AT_VERIFIED_PUBLIC_HEAD",
         "runs": [
-          {"id": 31706078911, "name": "Public candidate validation", "url": "https://github.com/wotanIII/luma-corporate-site-public/actions/runs/31706078911", "conclusion": "success"},
-          {"id": 31706078886, "name": "CodeQL", "url": "https://github.com/wotanIII/luma-corporate-site-public/actions/runs/31706078886", "conclusion": "success"}
+          {"id": 31706078911, "name": "Public candidate validation", "url": "https://github.com/luma-quant/luma-corporate-site-public/actions/runs/31706078911", "conclusion": "success"},
+          {"id": 31706078886, "name": "CodeQL", "url": "https://github.com/luma-quant/luma-corporate-site-public/actions/runs/31706078886", "conclusion": "success"}
         ]
       },
       "codeql": {"status": "PASS_ZERO_RESULTS_ZERO_OPEN_ALERTS", "analysis_id": 1613778562, "results_count": 0, "open_alert_count": 0, "rules_count": 201},
@@ -125,39 +134,39 @@
     },
     {
       "candidate": "github-profile",
-      "repository": "wotanIII/lumaquant-github-profile-public",
-      "url": "https://github.com/wotanIII/lumaquant-github-profile-public",
+      "repository": "luma-quant/lumaquant-github-profile-public",
+      "url": "https://github.com/luma-quant/lumaquant-github-profile-public",
       "repository_creation_status": "COMPLETED",
       "url_verification_status": "VERIFIED",
       "publication_performed": true,
       "visibility": "PUBLIC",
       "default_branch": "main",
-      "verified_public_head": "624ea78912e67ebc536d0e270446a9ec77563f31",
-      "verified_public_tree": "ead9651a5c956b0dc02333218dc9ffe3da8889d3",
+      "verified_public_head": "817c6a65eb1ebee78acacf4c3a516aa2fd25c6d6",
+      "verified_public_tree": "c691e3da06c3d6e0c6e246f53d09e6522eeeecdc",
       "ci": {
         "status": "PASS_AT_VERIFIED_PUBLIC_HEAD",
         "runs": [
-          {"id": 31692227539, "name": "validate-profile-candidate", "url": "https://github.com/wotanIII/lumaquant-github-profile-public/actions/runs/31692227539", "conclusion": "success"},
-          {"id": 31692227634, "name": "CodeQL prepared for public release", "url": "https://github.com/wotanIII/lumaquant-github-profile-public/actions/runs/31692227634", "conclusion": "success"}
+          {"id": 31707575973, "name": "validate-profile-candidate", "url": "https://github.com/luma-quant/lumaquant-github-profile-public/actions/runs/31707575973", "conclusion": "success"},
+          {"id": 31707576106, "name": "CodeQL prepared for public release", "url": "https://github.com/luma-quant/lumaquant-github-profile-public/actions/runs/31707576106", "conclusion": "success"}
         ]
       },
-      "codeql": {"status": "PASS_ZERO_RESULTS_ZERO_OPEN_ALERTS", "analysis_id": 1612947444, "results_count": 0, "open_alert_count": 0, "rules_count": 43}
+      "codeql": {"status": "PASS_ZERO_RESULTS_ZERO_OPEN_ALERTS", "analysis_id": 1613882333, "results_count": 0, "open_alert_count": 0, "rules_count": 43}
     },
     {
       "candidate": "trust-layer-master",
-      "repository": "wotanIII/luma-trust-layer-v1",
-      "url": "https://github.com/wotanIII/luma-trust-layer-v1",
+      "repository": "luma-quant/luma-trust-layer-v1",
+      "url": "https://github.com/luma-quant/luma-trust-layer-v1",
       "repository_creation_status": "COMPLETED",
       "url_verification_status": "VERIFIED",
       "publication_performed": true,
       "visibility": "PUBLIC",
       "default_branch": "main",
-      "verified_public_head": "dee8a0466f446602c5de0923eb3700f20c6ca19f",
-      "verified_public_tree": "95f212beab546ba945bc8d79451b1edf71587088",
+      "verified_public_head": "a8b2cbe1c9e32d5ebdff8cfcba435d7ca9304e1b",
+      "verified_public_tree": "81e69b24c0831c2816f414ebe31433d8cfbfafe0",
       "ci": {
         "status": "PASS_AT_VERIFIED_PUBLIC_HEAD",
         "runs": [
-          {"id": 31699097582, "name": "Verify Trust Layer Index", "url": "https://github.com/wotanIII/luma-trust-layer-v1/actions/runs/31699097582", "conclusion": "success"}
+          {"id": 31710806734, "name": "Verify Trust Layer Index", "url": "https://github.com/luma-quant/luma-trust-layer-v1/actions/runs/31710806734", "conclusion": "success"}
         ]
       },
       "codeql": {"status": "N/A_NO_CODEQL_ANALYSIS", "reason": "The static index has no CodeQL workflow; GitHub default setup is not configured. The index verifier and Gitleaks jobs passed."}
