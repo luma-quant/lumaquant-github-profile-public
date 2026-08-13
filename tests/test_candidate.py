@@ -11,6 +11,14 @@ ROOT = Path(__file__).resolve().parents[1]
 
 
 class ProfileCandidateTests(unittest.TestCase):
+    def test_gitleaks_scans_complete_rewritten_history(self) -> None:
+        workflow = (ROOT / ".github/workflows/validate-profile.yml").read_text(
+            encoding="utf-8"
+        )
+        self.assertIn("fetch-depth: 0", workflow)
+        self.assertIn("persist-credentials: false", workflow)
+        self.assertIn('gitleaks" git . --redact --no-banner', workflow)
+
     def test_release_records_verified_publication_without_runtime_claims(self) -> None:
         release = json.loads((ROOT / "RELEASE.json").read_text(encoding="utf-8"))
         self.assertEqual("0.1.0-rc1", release["public_release"])

@@ -53,7 +53,7 @@
   "operator_identity_status": "COMPLETED_OWNER_CONFIRMED",
   "owner_decision_manifest_sha256": "3679dce61727ff0e6a75783cf8b3817bb9c762aa8fe2c95086d0c667476aa196",
   "production_alignment": "REFERENCE_ONLY",
-  "public_candidate_sha256": "5b99b8a6bfcd0ce06ac7ce90941deae961373f2afc57bc0062eb2df7743b6e27",
+  "public_candidate_sha256": "911f37b5c829a347df9238c693f6f26c923cc21d2390f2e71a0ae265c3054dfc",
   "public_candidate_sha256_scope": "canonical path, size and SHA-256 for every candidate file except RELEASE.json and PUBLIC_SOURCE_MANIFEST.json",
   "public_commit_role": "PRE_ORGANIZATION_REBIND_PUBLIC_HEAD",
   "public_commit_sha": "817c6a65eb1ebee78acacf4c3a516aa2fd25c6d6",

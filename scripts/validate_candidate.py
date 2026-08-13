@@ -331,7 +331,11 @@ def validate() -> list[str]:
         for action in action_uses
     ):
         errors.append("CI actions must be exactly five full-SHA references")
-    if "persist-credentials: false" not in workflow_text or "secrets." in workflow_text:
+    if (
+        "fetch-depth: 0" not in workflow_text
+        or "persist-credentials: false" not in workflow_text
+        or "secrets." in workflow_text
+    ):
         errors.append("CI credential boundary mismatch")
     if "551f6fc83ea457d62a0d98237cbad105af8d557003051f41f3e7ca7b3f2470eb" not in workflow_text:
         errors.append("pinned Gitleaks archive checksum missing")

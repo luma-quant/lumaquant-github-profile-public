@@ -21,8 +21,8 @@
     },
     {
       "path": ".github/workflows/validate-profile.yml",
-      "sha256": "e4a3feb694223aa042359216d3bc3338c348084cc6c01611aa505ec91c050ffc",
-      "size_bytes": 1908
+      "sha256": "53fee370c791842da943bf42fda22e49707e92bca7689ccb8ef04eee797b66c0",
+      "size_bytes": 1933
     },
     {
       "path": ".gitignore",
@@ -86,7 +86,7 @@
     },
     {
       "path": "RELEASE.json",
-      "sha256": "6db7db421c4a9bdd32a210f0632051b2777efe6f8deb27a4041df723ee24fbfc",
+      "sha256": "75542ef1e95a6f3253b98521c9c2f623112fbf24e0915534209c9912679adab4",
       "size_bytes": 3815
     },
     {
@@ -131,13 +131,13 @@
     },
     {
       "path": "scripts/validate_candidate.py",
-      "sha256": "b720d33ade5b5d94d162f265b230ef05d730c8100a500767db12936e438f4a22",
-      "size_bytes": 17533
+      "sha256": "0aa2119f13a0d39bac0bfc06bfa27f5d05a115204365740bc15facddb074324a",
+      "size_bytes": 17606
     },
     {
       "path": "tests/test_candidate.py",
-      "sha256": "0ed4284ff2975889c06a7a955ac84d62537af46eb7c41348f1e1fe1045501ddb",
-      "size_bytes": 7463
+      "sha256": "8650f86bb20ed4880a36c2c253aed7a2a34e9e5276f05d3a363c976863f44f93",
+      "size_bytes": 7837
     }
   ],
   "included_file_count": 26,
