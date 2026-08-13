@@ -1,0 +1,58 @@
+{
+  "schema_version": "1.0",
+  "account_owner": "wotanIII",
+  "organization_status": "NO_SEPARATE_GITHUB_ORGANIZATION_CONFIRMED",
+  "status_semantics": "Targets are owner-approved planning metadata, not evidence that a repository exists or is public.",
+  "repositories": [
+    {
+      "candidate": "engine-evidence",
+      "url": "https://github.com/wotanIII/luma-engine-evidence-public",
+      "repository_creation_status": "PENDING",
+      "url_verification_status": "PENDING",
+      "publication_performed": false,
+      "note": "Engine Evidence E4 is a separately governed publication target."
+    },
+    {
+      "candidate": "ai-frontend",
+      "url": "https://github.com/wotanIII/luma-ai-frontend-public",
+      "repository_creation_status": "PENDING",
+      "url_verification_status": "PENDING",
+      "publication_performed": false
+    },
+    {
+      "candidate": "token-portal",
+      "url": "https://github.com/wotanIII/luma-token-portal-public",
+      "repository_creation_status": "PENDING",
+      "url_verification_status": "PENDING",
+      "publication_performed": false
+    },
+    {
+      "candidate": "platform-api",
+      "url": "https://github.com/wotanIII/luma-platform-api-public",
+      "repository_creation_status": "PENDING",
+      "url_verification_status": "PENDING",
+      "publication_performed": false
+    },
+    {
+      "candidate": "corporate-site",
+      "url": "https://github.com/wotanIII/luma-corporate-site-public",
+      "repository_creation_status": "PENDING",
+      "url_verification_status": "PENDING",
+      "publication_performed": false
+    },
+    {
+      "candidate": "github-profile",
+      "url": "https://github.com/wotanIII/lumaquant-github-profile-public",
+      "repository_creation_status": "PENDING",
+      "url_verification_status": "PENDING",
+      "publication_performed": false
+    },
+    {
+      "candidate": "trust-layer-master",
+      "url": "https://github.com/wotanIII/luma-trust-layer-v1",
+      "repository_creation_status": "PENDING",
+      "url_verification_status": "PENDING",
+      "publication_performed": false
+    }
+  ]
+}

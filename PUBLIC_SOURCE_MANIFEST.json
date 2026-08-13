@@ -1,0 +1,160 @@
+{
+  "excluded_category_summary": [
+    "credentials and signing material",
+    "customer, wallet, payment and transaction data",
+    "private repository history and product source",
+    "engine logic, prompts and deployment controls",
+    "unsupported assets and audit or legal claims"
+  ],
+  "export_timestamp_utc": "2026-08-13T00:00:00Z",
+  "export_tool_version": "1.0.0",
+  "files": [
+    {
+      "path": ".github/workflows/codeql.yml",
+      "sha256": "efbd569267e700df34a2682a4fc8f09a1e57e59baafa8d637b800b4758249eaa",
+      "size_bytes": 637
+    },
+    {
+      "path": ".github/workflows/validate-profile.yml",
+      "sha256": "e4a3feb694223aa042359216d3bc3338c348084cc6c01611aa505ec91c050ffc",
+      "size_bytes": 1908
+    },
+    {
+      "path": ".gitignore",
+      "sha256": "bf647dbddc11ca818eba7d4197081ea6c266859a4431f2f297f4ba32a154c324",
+      "size_bytes": 82
+    },
+    {
+      "path": "ARCHITECTURE.md",
+      "sha256": "4c5c69a9dda9a053d6ecb5944d813370ba6c2d2e7c4ecc82101cf90fd6309c19",
+      "size_bytes": 790
+    },
+    {
+      "path": "ASSET_RIGHTS_INVENTORY.json",
+      "sha256": "c318cadeb97d5b010ca6d63ad332d580f4b7eea0de7080605b138f0fc8533110",
+      "size_bytes": 300
+    },
+    {
+      "path": "CHANGELOG.md",
+      "sha256": "21433146be983bdb4509881f6bee756dc7c8ecb10d96ba81469065755289252b",
+      "size_bytes": 679
+    },
+    {
+      "path": "KNOWN_LIMITATIONS.md",
+      "sha256": "c365022c0485dacbeceaedcb6554da51e68162a4d4ad17aaded4e3559d7d6d4e",
+      "size_bytes": 935
+    },
+    {
+      "path": "LICENSE.md",
+      "sha256": "0f02c38a70126bc5d2d82a2c601367ac8186ad7cc20eee9e3dd074b270f36ea8",
+      "size_bytes": 655
+    },
+    {
+      "path": "NOTICE.md",
+      "sha256": "30ee56a91dfb86d0cfd5fb6919ac1536688011b0aba971850a12f4c11d450faf",
+      "size_bytes": 518
+    },
+    {
+      "path": "OWNER_GATE_STATUS.json",
+      "sha256": "ecdd52ca2fac590ec3913b97fc5cd356e792e81c910adfae550d4554c9d0952a",
+      "size_bytes": 1198
+    },
+    {
+      "path": "PLANNED_PUBLIC_REPOSITORIES.json",
+      "sha256": "76bb1b69d06145e9f9a29c6e638b30fe4aadb156fad9ac71cb8d21a3e79d0489",
+      "size_bytes": 2092
+    },
+    {
+      "path": "PUBLICATION_STATUS.md",
+      "sha256": "16b058ec30d1b78c024e66ef1bcf4cb0b9828261b4b6ad0d10b30d8ebab92e8e",
+      "size_bytes": 885
+    },
+    {
+      "path": "PUBLIC_PRIVATE_BOUNDARY.md",
+      "sha256": "fda65e2a00185cb7439646256a2725d7cb164557fca44810b9b848de35e7633f",
+      "size_bytes": 1137
+    },
+    {
+      "path": "README.md",
+      "sha256": "2937c6a30cb548773a5a0185b1db508e9abfdb384ea3fbd3ccc5a5588819a2be",
+      "size_bytes": 2885
+    },
+    {
+      "path": "RELEASE.json",
+      "sha256": "51aec87d0a068ed3f57b138706a454c0acb564d6ce7c98792d65894cc321117e",
+      "size_bytes": 2051
+    },
+    {
+      "path": "SBOM.cdx.json",
+      "sha256": "a2c83fe032015b704e99708a94f67179b2fb713ce48292a9b61bf06cb96b9163",
+      "size_bytes": 1011
+    },
+    {
+      "path": "SBOM.spdx.json",
+      "sha256": "4d4addf0ef81c36a604a00204ecd7496ee7762680a690bf5e8869d4a5828548d",
+      "size_bytes": 1076
+    },
+    {
+      "path": "SECURITY.md",
+      "sha256": "1904d352897c6a128c6c88d8bf554d8f9fabfa2d1e5d70dd1396aee4d99d89e3",
+      "size_bytes": 807
+    },
+    {
+      "path": "profile/README.md",
+      "sha256": "fe751984bf7c72bc563bfd5551b66e1d3c1a6863b86d461ed47928e3f0b41014",
+      "size_bytes": 3203
+    },
+    {
+      "path": "scripts/build_archive.py",
+      "sha256": "c782fa8085a51c5ae2ccbf61b6fa80046b62c71d568940b40b8da5c355c32cef",
+      "size_bytes": 2614
+    },
+    {
+      "path": "scripts/generate_metadata.py",
+      "sha256": "03ecf3d2dc8d9a1f9a08703f902c50172fdc0d2bf436ccd42938f3a3bcf46301",
+      "size_bytes": 4441
+    },
+    {
+      "path": "scripts/generate_sbom.py",
+      "sha256": "8d600369222767af8225fa70c0265ecc12c196d816b05ee3080b5f9a0440311a",
+      "size_bytes": 3952
+    },
+    {
+      "path": "scripts/secret_scan.py",
+      "sha256": "5b01601632acbc7f1d65c8f427d9e1bc58344ca721eb785bbde08378b04693a7",
+      "size_bytes": 2214
+    },
+    {
+      "path": "scripts/validate_candidate.py",
+      "sha256": "e8989a4c355e1cc3738dd56aecb39fe19712c9f51ced93eacfba0140f721b49b",
+      "size_bytes": 10039
+    },
+    {
+      "path": "tests/test_candidate.py",
+      "sha256": "8cba9cc3ab33add7152cb626a4583019b6bd17cdc1efc32e4d00f4cc3c45fc39",
+      "size_bytes": 3552
+    }
+  ],
+  "included_file_count": 25,
+  "license_status": "PROPRIETARY_SOURCE_AVAILABLE_ALL_RIGHTS_RESERVED",
+  "owner_gate_status": {
+    "asset_rights": "COMPLETED_OWNER_CONFIRMED_FAIL_CLOSED",
+    "license": "PROPRIETARY_SOURCE_AVAILABLE_ALL_RIGHTS_RESERVED",
+    "open_review_matters": [
+      "LEGAL_REVIEW_NOT_YET_COMPLETED",
+      "INDEPENDENT_THIRD_PARTY_AUDIT_NOT_YET_COMPLETED"
+    ],
+    "operator_identity": "COMPLETED_OWNER_CONFIRMED",
+    "security_contact": "COMPLETED_OWNER_CONFIRMED"
+  },
+  "production_alignment": "REFERENCE_ONLY",
+  "public_release": "0.1.0-rc1",
+  "publication_performed": false,
+  "publication_status": "PUBLIC_REPOSITORY_PENDING",
+  "release_class": "REFERENCE_IMPLEMENTATION",
+  "repository": "wotanIII/lumaquant-github-profile-public",
+  "repository_creation_status": "PENDING",
+  "repository_url": "https://github.com/wotanIII/lumaquant-github-profile-public",
+  "schema_version": "1.0.0",
+  "source_private_commit_sha": null
+}

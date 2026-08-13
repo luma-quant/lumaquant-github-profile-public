@@ -1,0 +1,34 @@
+{
+  "SPDXID": "SPDXRef-DOCUMENT",
+  "creationInfo": {
+    "created": "2026-08-13T00:00:00Z",
+    "creators": [
+      "Tool: luma-profile-sbom-generator-1.0.0"
+    ]
+  },
+  "dataLicense": "CC0-1.0",
+  "documentNamespace": "urn:uuid:50c88643-0770-5f82-89ba-0eeb44876c7a",
+  "name": "lumaquant-github-profile-0.1.0-rc1",
+  "packages": [
+    {
+      "SPDXID": "SPDXRef-Package-lumaquant-github-profile",
+      "copyrightText": "Copyright 2026 Luma Quant e.U. All rights reserved.",
+      "downloadLocation": "NOASSERTION",
+      "filesAnalyzed": false,
+      "licenseConcluded": "LicenseRef-LumaQuant-Proprietary",
+      "licenseDeclared": "LicenseRef-LumaQuant-Proprietary",
+      "name": "lumaquant-github-profile",
+      "primaryPackagePurpose": "APPLICATION",
+      "supplier": "Organization: Luma Quant e.U.",
+      "versionInfo": "0.1.0-rc1"
+    }
+  ],
+  "relationships": [
+    {
+      "relatedSpdxElement": "SPDXRef-Package-lumaquant-github-profile",
+      "relationshipType": "DESCRIBES",
+      "spdxElementId": "SPDXRef-DOCUMENT"
+    }
+  ],
+  "spdxVersion": "SPDX-2.3"
+}

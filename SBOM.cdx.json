@@ -1,0 +1,43 @@
+{
+  "bomFormat": "CycloneDX",
+  "components": [],
+  "dependencies": [],
+  "metadata": {
+    "component": {
+      "copyright": "Copyright 2026 Luma Quant e.U. All rights reserved.",
+      "licenses": [
+        {
+          "license": {
+            "id": "LicenseRef-LumaQuant-Proprietary"
+          }
+        }
+      ],
+      "name": "lumaquant-github-profile",
+      "properties": [
+        {
+          "name": "luma:artifact_type",
+          "value": "DOCUMENTATION_PROFILE_CANDIDATE"
+        },
+        {
+          "name": "luma:third_party_runtime_component_count",
+          "value": "0"
+        }
+      ],
+      "type": "application",
+      "version": "0.1.0-rc1"
+    },
+    "timestamp": "2026-08-13T00:00:00Z",
+    "tools": {
+      "components": [
+        {
+          "name": "luma-profile-sbom-generator",
+          "type": "application",
+          "version": "1.0.0"
+        }
+      ]
+    }
+  },
+  "serialNumber": "urn:uuid:50c88643-0770-5f82-89ba-0eeb44876c7a",
+  "specVersion": "1.6",
+  "version": 1
+}

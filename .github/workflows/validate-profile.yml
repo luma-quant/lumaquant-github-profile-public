@@ -1,0 +1,54 @@
+name: validate-profile-candidate
+
+on:
+  pull_request:
+  push:
+    branches: [main, "trust/**"]
+  workflow_dispatch:
+
+permissions:
+  contents: read
+
+env:
+  PYTHONDONTWRITEBYTECODE: "1"
+
+jobs:
+  validate:
+    runs-on: ubuntu-24.04
+    timeout-minutes: 10
+    steps:
+      - name: Check out candidate
+        uses: actions/checkout@3d3c42e5aac5ba805825da76410c181273ba90b1 # v7.0.1
+        with:
+          persist-credentials: false
+      - name: Set up Python
+        uses: actions/setup-python@5fda3b95a4ea91299a34e894583c3862153e4b97 # v7.0.0
+        with:
+          python-version: "3.13"
+      - name: Verify SBOM and metadata
+        run: |
+          python -B scripts/generate_sbom.py --check
+          python -B scripts/generate_metadata.py --check
+      - name: Validate exact public boundary
+        run: python -B scripts/validate_candidate.py
+      - name: Run tests
+        run: python -B -m unittest discover -s tests -p "test_*.py" -v
+      - name: Scan with pinned Gitleaks CLI
+        shell: bash
+        run: |
+          set -euo pipefail
+          version="8.30.1"
+          archive="gitleaks_${version}_linux_x64.tar.gz"
+          curl --fail --location --silent --show-error \
+            "https://github.com/gitleaks/gitleaks/releases/download/v${version}/${archive}" \
+            --output "${RUNNER_TEMP}/${archive}"
+          echo "551f6fc83ea457d62a0d98237cbad105af8d557003051f41f3e7ca7b3f2470eb  ${RUNNER_TEMP}/${archive}" | sha256sum --check --strict
+          tar -xzf "${RUNNER_TEMP}/${archive}" -C "${RUNNER_TEMP}" gitleaks
+          "${RUNNER_TEMP}/gitleaks" git . --redact --no-banner
+
+  security-scanning-prepared:
+    if: github.event.repository.visibility != 'public'
+    runs-on: ubuntu-24.04
+    steps:
+      - name: Record public-only security gate
+        run: echo "CodeQL and GitHub dependency review are prepared for, but not evidenced in, a final public repository."

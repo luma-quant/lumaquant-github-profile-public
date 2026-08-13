@@ -1,0 +1,9 @@
+{
+  "schema_version": "1.0",
+  "candidate": "lumaquant-github-profile",
+  "policy": "INCLUDE_ONLY_OWNED_OR_LICENSED_FOR_PUBLIC_REPOSITORY_EXCLUDE_ALL_UNRESOLVED",
+  "attestation_scope": "OWNER_CONFIRMED_NOT_INDEPENDENTLY_VERIFIED",
+  "asset_count": 0,
+  "unresolved_asset_count": 0,
+  "assets": []
+}
