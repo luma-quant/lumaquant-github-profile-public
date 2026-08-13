@@ -6,18 +6,27 @@
 - Repository creation: `COMPLETED`
 - Visibility: `PUBLIC`
 - URL verification: `VERIFIED`
-- Verified pre-organization-rebind public HEAD: `817c6a65eb1ebee78acacf4c3a516aa2fd25c6d6`
-- Verified pre-organization-rebind public tree: `c691e3da06c3d6e0c6e246f53d09e6522eeeecdc`
+- Evidence role: `OBSERVED_COMPLETED_PREDECESSOR_NOT_CURRENT_SELF_BINDING`
+- Observed completed predecessor HEAD: `b9f649dc8d7b2c594815c31ea646b96aefbab1a2`
+- Observed completed predecessor tree: `c23ff252b5413a82a75ea96240285715cb2bf0b7`
 - Publication review: `INDEPENDENT_PUBLICATION_REVIEW_PASSED`
 - Publication: `PUBLIC_REPOSITORY_VERIFIED`
 - Publication performed: `true`
-- CI: [run 31707575973](https://github.com/luma-quant/lumaquant-github-profile-public/actions/runs/31707575973) — `success`
-- CodeQL: [run 31707576106](https://github.com/luma-quant/lumaquant-github-profile-public/actions/runs/31707576106), analysis `1613882333` — `0` results / `0` open alerts
+- CI: [run 31733197783](https://github.com/luma-quant/lumaquant-github-profile-public/actions/runs/31733197783) — `success`
+- CodeQL: [run 31733197855](https://github.com/luma-quant/lumaquant-github-profile-public/actions/runs/31733197855), analysis `1615527371` — `0` results / `0` open alerts
 - Artifact type: `DOCUMENTATION_PROFILE_PUBLIC_STATUS`
 - Release class: `REFERENCE_IMPLEMENTATION`
 - Production alignment: `REFERENCE_ONLY`
 - License: `PROPRIETARY_SOURCE_AVAILABLE_ALL_RIGHTS_RESERVED`
 - Security contact: `security@lumaquant.tech` — `COMPLETED_OWNER_CONFIRMED`
+
+The Profile evidence above describes the last completed predecessor observed
+before this evidence-alignment commit. It does not claim a self-referential
+binding to this commit. Engine, AI, Token, API and Corporate are bound to their
+final current organization-rebound public heads in
+`PLANNED_PUBLIC_REPOSITORIES.json`. The Master remains at transferred
+pre-rebind HEAD `a8b2cbe1c9e32d5ebdff8cfcba435d7ca9304e1b` pending its separately governed
+rebuild.
 
 ## Open review matters
 

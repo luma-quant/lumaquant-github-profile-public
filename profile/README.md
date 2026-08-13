@@ -8,9 +8,12 @@ owner-confirmed and not independently registry-verified.
 ## Public Trust Layer repositories
 
 All seven Trust Layer repositories below are public in the verified GitHub
-organization `luma-quant`. Their point-in-time pre-rebind HEAD, tree, CI and
-CodeQL evidence is recorded in
+organization `luma-quant`. Final current organization-rebound HEAD, tree, CI
+and CodeQL evidence for Engine, AI, Token, API and Corporate is recorded in
 [`PLANNED_PUBLIC_REPOSITORIES.json`](../PLANNED_PUBLIC_REPOSITORIES.json).
+The Profile entry is explicitly its last completed observed predecessor, not a
+self-referential current-head binding. The Master remains at its transferred
+pre-rebind evidence until its separately governed rebuild.
 
 | Area | Public repository | Evidence class |
 | --- | --- | --- |

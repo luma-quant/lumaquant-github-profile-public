@@ -4,8 +4,8 @@
   "account_type": "ORGANIZATION",
   "organization_id": 316678262,
   "organization_status": "VERIFIED_CREATED_AND_TRANSFER_COMPLETE",
-  "verified_at_utc": "2026-08-13T18:00:13.8577395Z",
-  "status_semantics": "Point-in-time GitHub transfer evidence for the seven public Trust Layer repositories. Verified HEADs identify the transferred pre-rebind publication state. Later status-only commits do not invalidate the snapshot, and the Master binding intentionally avoids a cyclic claim about a future status commit.",
+  "verified_at_utc": "2026-08-13T19:03:28.0273284Z",
+  "status_semantics": "Point-in-time publication evidence for the seven public Trust Layer repositories in the luma-quant organization. Engine, AI, Token, API and Corporate records bind their final current organization-rebound public heads. The Profile record binds the last completed predecessor observed before this evidence-alignment commit and is explicitly not a self-referential current-head claim. The Master remains bound to its transferred pre-rebind public head until its separately governed rebuild.",
   "namespace_transfer": {
     "former_owner": "wotanIII",
     "former_owner_redirect_status": "VERIFIED_301_TO_CANONICAL_ORGANIZATION_URLS",
@@ -38,18 +38,18 @@
       "publication_performed": true,
       "visibility": "PUBLIC",
       "default_branch": "main",
-      "verified_public_head": "03516148a5a2345c0bf967598c65194e5c5ea401",
-      "verified_public_tree": "993d88ee3dbb164a513c8bd392dd3d085b886239",
+      "verified_public_head": "627f6a87ef8c52d69e7a9b2fd2bf13fa0f7b2c24",
+      "verified_public_tree": "b42d9d5afebcaae4e01b83ab6f0b5a9e84f9de26",
       "ci": {
         "status": "PASS_AT_VERIFIED_PUBLIC_HEAD",
         "runs": [
-          {"id": 31703977937, "name": "Validate Evidence", "url": "https://github.com/luma-quant/luma-engine-evidence-public/actions/runs/31703977937", "conclusion": "success"},
-          {"id": 31703977901, "name": "Public Security", "url": "https://github.com/luma-quant/luma-engine-evidence-public/actions/runs/31703977901", "conclusion": "success"},
-          {"id": 31703977831, "name": "Checksum Portability", "url": "https://github.com/luma-quant/luma-engine-evidence-public/actions/runs/31703977831", "conclusion": "success"},
-          {"id": 31703977872, "name": "CodeQL", "url": "https://github.com/luma-quant/luma-engine-evidence-public/actions/runs/31703977872", "conclusion": "success"}
+          {"id": 31731311519, "name": "Validate Evidence", "url": "https://github.com/luma-quant/luma-engine-evidence-public/actions/runs/31731311519", "conclusion": "success"},
+          {"id": 31731311555, "name": "Public Security", "url": "https://github.com/luma-quant/luma-engine-evidence-public/actions/runs/31731311555", "conclusion": "success"},
+          {"id": 31731311595, "name": "Checksum Portability", "url": "https://github.com/luma-quant/luma-engine-evidence-public/actions/runs/31731311595", "conclusion": "success"},
+          {"id": 31731311543, "name": "CodeQL", "url": "https://github.com/luma-quant/luma-engine-evidence-public/actions/runs/31731311543", "conclusion": "success"}
         ]
       },
-      "codeql": {"status": "PASS_ZERO_RESULTS_ZERO_OPEN_ALERTS", "analysis_id": 1613639143, "results_count": 0, "open_alert_count": 0, "rules_count": 43},
+      "codeql": {"status": "PASS_ZERO_RESULTS_ZERO_OPEN_ALERTS", "analysis_id": 1615411221, "results_count": 0, "open_alert_count": 0, "rules_count": 43},
       "note": "The first prospective E4 commitment and reveal remains a separate, not-yet-completed milestone."
     },
     {
@@ -61,16 +61,16 @@
       "publication_performed": true,
       "visibility": "PUBLIC",
       "default_branch": "main",
-      "verified_public_head": "f9192d49d11701c5b1e92efcd7b614922a4dc595",
-      "verified_public_tree": "54ab7014a3511443e890cfd3e066f7a6aa9605eb",
+      "verified_public_head": "e751e6e49cdd56a493ce93f1c3026a1ccae625e3",
+      "verified_public_tree": "8d4347640e20629f090bf116a0eee45a884cbb83",
       "ci": {
         "status": "PASS_AT_VERIFIED_PUBLIC_HEAD",
         "runs": [
-          {"id": 31704278130, "name": "Public source verification", "url": "https://github.com/luma-quant/luma-ai-frontend-public/actions/runs/31704278130", "conclusion": "success"},
-          {"id": 31704278127, "name": "CodeQL", "url": "https://github.com/luma-quant/luma-ai-frontend-public/actions/runs/31704278127", "conclusion": "success"}
+          {"id": 31731649324, "name": "Public source verification", "url": "https://github.com/luma-quant/luma-ai-frontend-public/actions/runs/31731649324", "conclusion": "success"},
+          {"id": 31731649355, "name": "CodeQL", "url": "https://github.com/luma-quant/luma-ai-frontend-public/actions/runs/31731649355", "conclusion": "success"}
         ]
       },
-      "codeql": {"status": "PASS_ZERO_RESULTS_ZERO_OPEN_ALERTS", "analysis_id": 1613660523, "results_count": 0, "open_alert_count": 0, "rules_count": 87}
+      "codeql": {"status": "PASS_ZERO_RESULTS_ZERO_OPEN_ALERTS", "analysis_id": 1615436206, "results_count": 0, "open_alert_count": 0, "rules_count": 87}
     },
     {
       "candidate": "token-portal",
@@ -81,15 +81,15 @@
       "publication_performed": true,
       "visibility": "PUBLIC",
       "default_branch": "main",
-      "verified_public_head": "b26bb211ec1c063e7fa2cdd36d0f085f01f3301a",
-      "verified_public_tree": "50f27eb376c7ab47469d7c0e1f8e9ad6bc0bf04e",
+      "verified_public_head": "6c6833dc8ce8f96e688999f15eb48a07be0094c2",
+      "verified_public_tree": "63a396f9859980701423174d952952bcf7cf14df",
       "ci": {
         "status": "PASS_AT_VERIFIED_PUBLIC_HEAD",
         "runs": [
-          {"id": 31704480279, "name": "trust-reference-ci", "url": "https://github.com/luma-quant/luma-token-portal-public/actions/runs/31704480279", "conclusion": "success"}
+          {"id": 31732177328, "name": "trust-reference-ci", "url": "https://github.com/luma-quant/luma-token-portal-public/actions/runs/31732177328", "conclusion": "success"}
         ]
       },
-      "codeql": {"status": "PASS_ZERO_RESULTS_ZERO_OPEN_ALERTS", "analysis_id": 1613670899, "results_count": 0, "open_alert_count": 0, "rules_count": 87}
+      "codeql": {"status": "PASS_ZERO_RESULTS_ZERO_OPEN_ALERTS", "analysis_id": 1615466279, "results_count": 0, "open_alert_count": 0, "rules_count": 87}
     },
     {
       "candidate": "platform-api",
@@ -100,15 +100,15 @@
       "publication_performed": true,
       "visibility": "PUBLIC",
       "default_branch": "main",
-      "verified_public_head": "44b9b15d1dbd2e70e3c4db8764f10bbae14c608c",
-      "verified_public_tree": "187e4b8416e048a505bb59290d9e05b5c610e1bb",
+      "verified_public_head": "c736ac77166f2aac89cf3b1d0ddd02e4b206ca52",
+      "verified_public_tree": "b420bd8b8c866b75588744f5100d5eb075c4ddac",
       "ci": {
         "status": "PASS_AT_VERIFIED_PUBLIC_HEAD",
         "runs": [
-          {"id": 31705801892, "name": "validate-public-contract", "url": "https://github.com/luma-quant/luma-platform-api-public/actions/runs/31705801892", "conclusion": "success"}
+          {"id": 31732468849, "name": "validate-public-contract", "url": "https://github.com/luma-quant/luma-platform-api-public/actions/runs/31732468849", "conclusion": "success"}
         ]
       },
-      "codeql": {"status": "PASS_ZERO_RESULTS_ZERO_OPEN_ALERTS", "analysis_id": 1613761037, "results_count": 0, "open_alert_count": 0, "rules_count": 172}
+      "codeql": {"status": "PASS_ZERO_RESULTS_ZERO_OPEN_ALERTS", "analysis_id": 1615482639, "results_count": 0, "open_alert_count": 0, "rules_count": 172}
     },
     {
       "candidate": "corporate-site",
@@ -119,16 +119,16 @@
       "publication_performed": true,
       "visibility": "PUBLIC",
       "default_branch": "main",
-      "verified_public_head": "49ed20aae24b1832081a89f37eeb1007b1c72816",
-      "verified_public_tree": "64c7423ea2156948c31d64daa4b50cdd348de7b4",
+      "verified_public_head": "33743aa6af25ae5053cb68ded64a966e953b406b",
+      "verified_public_tree": "b0ff230818c1415997a16c13a9a11a2ea68ea2a0",
       "ci": {
         "status": "PASS_AT_VERIFIED_PUBLIC_HEAD",
         "runs": [
-          {"id": 31706078911, "name": "Public candidate validation", "url": "https://github.com/luma-quant/luma-corporate-site-public/actions/runs/31706078911", "conclusion": "success"},
-          {"id": 31706078886, "name": "CodeQL", "url": "https://github.com/luma-quant/luma-corporate-site-public/actions/runs/31706078886", "conclusion": "success"}
+          {"id": 31732703751, "name": "Public candidate validation", "url": "https://github.com/luma-quant/luma-corporate-site-public/actions/runs/31732703751", "conclusion": "success"},
+          {"id": 31732703939, "name": "CodeQL", "url": "https://github.com/luma-quant/luma-corporate-site-public/actions/runs/31732703939", "conclusion": "success"}
         ]
       },
-      "codeql": {"status": "PASS_ZERO_RESULTS_ZERO_OPEN_ALERTS", "analysis_id": 1613778562, "results_count": 0, "open_alert_count": 0, "rules_count": 201},
+      "codeql": {"status": "PASS_ZERO_RESULTS_ZERO_OPEN_ALERTS", "analysis_id": 1615496769, "results_count": 0, "open_alert_count": 0, "rules_count": 201},
       "deployment_status": "NOT_DEPLOYED",
       "production_alignment": "NOT_YET_VERIFIED"
     },
@@ -141,16 +141,18 @@
       "publication_performed": true,
       "visibility": "PUBLIC",
       "default_branch": "main",
-      "verified_public_head": "817c6a65eb1ebee78acacf4c3a516aa2fd25c6d6",
-      "verified_public_tree": "c691e3da06c3d6e0c6e246f53d09e6522eeeecdc",
+      "verified_public_head": "b9f649dc8d7b2c594815c31ea646b96aefbab1a2",
+      "verified_public_tree": "c23ff252b5413a82a75ea96240285715cb2bf0b7",
+      "evidence_role": "OBSERVED_COMPLETED_PREDECESSOR_NOT_CURRENT_SELF_BINDING",
       "ci": {
         "status": "PASS_AT_VERIFIED_PUBLIC_HEAD",
         "runs": [
-          {"id": 31707575973, "name": "validate-profile-candidate", "url": "https://github.com/luma-quant/lumaquant-github-profile-public/actions/runs/31707575973", "conclusion": "success"},
-          {"id": 31707576106, "name": "CodeQL prepared for public release", "url": "https://github.com/luma-quant/lumaquant-github-profile-public/actions/runs/31707576106", "conclusion": "success"}
+          {"id": 31733197783, "name": "validate-profile-candidate", "url": "https://github.com/luma-quant/lumaquant-github-profile-public/actions/runs/31733197783", "conclusion": "success"},
+          {"id": 31733197855, "name": "CodeQL prepared for public release", "url": "https://github.com/luma-quant/lumaquant-github-profile-public/actions/runs/31733197855", "conclusion": "success"}
         ]
       },
-      "codeql": {"status": "PASS_ZERO_RESULTS_ZERO_OPEN_ALERTS", "analysis_id": 1613882333, "results_count": 0, "open_alert_count": 0, "rules_count": 43}
+      "codeql": {"status": "PASS_ZERO_RESULTS_ZERO_OPEN_ALERTS", "analysis_id": 1615527371, "results_count": 0, "open_alert_count": 0, "rules_count": 43},
+      "note": "This is the last completed predecessor observed before the present evidence-alignment commit. It is evidence about that predecessor, not a claim that this self-describing repository is currently bound to its own future commit."
     },
     {
       "candidate": "trust-layer-master",
@@ -163,6 +165,7 @@
       "default_branch": "main",
       "verified_public_head": "a8b2cbe1c9e32d5ebdff8cfcba435d7ca9304e1b",
       "verified_public_tree": "81e69b24c0831c2816f414ebe31433d8cfbfafe0",
+      "evidence_role": "TRANSFERRED_PRE_REBIND_HEAD_PENDING_SEPARATELY_GOVERNED_REBUILD",
       "ci": {
         "status": "PASS_AT_VERIFIED_PUBLIC_HEAD",
         "runs": [

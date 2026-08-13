@@ -1,5 +1,18 @@
 # Changelog
 
+## Final component evidence alignment - 2026-08-13
+
+- Bound Engine, AI, Token, API and Corporate to their final current
+  organization-rebound public HEADs and trees, successful exact-head CI runs
+  and zero-result/zero-open-alert CodeQL analyses.
+- Recorded the Profile's last completed predecessor as observed evidence rather
+  than an impossible self-referential current-head claim.
+- Preserved the Master at transferred pre-rebind HEAD
+  `a8b2cbe1c9e32d5ebdff8cfcba435d7ca9304e1b` pending its separately governed
+  rebuild.
+- Kept Legal Review and the independent third-party audit open and made no
+  deployment, DNS, payment, token-delivery or refund-automation change.
+
 ## GitHub organization namespace alignment - 2026-08-13
 
 - Recorded the verified, content-preserving transfer of all seven Trust Layer

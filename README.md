@@ -5,11 +5,16 @@ Publication performed: **YES**
 
 This documentation-only repository is public at
 [luma-quant/lumaquant-github-profile-public](https://github.com/luma-quant/lumaquant-github-profile-public).
-The transferred pre-rebind HEAD `817c6a65eb1ebee78acacf4c3a516aa2fd25c6d6`,
-its tree, public CI and zero-result CodeQL analysis were verified on 13 August
-2026. All seven Trust Layer repositories are now in the verified `luma-quant`
-GitHub organization. Their former `wotanIII` URLs redirect to the canonical
-organization URLs; the transfer itself changed neither content nor history.
+The registry now binds the final current organization-rebound public heads for
+Engine, AI, Token, API and Corporate. For this self-describing Profile, it
+records the last completed predecessor
+`b9f649dc8d7b2c594815c31ea646b96aefbab1a2` and tree
+`c23ff252b5413a82a75ea96240285715cb2bf0b7`, together with its successful CI
+and zero-result CodeQL analysis. That record is observed predecessor evidence,
+not a self-referential claim about the current commit. All seven Trust Layer
+repositories are in the verified `luma-quant` GitHub organization. Their former
+`wotanIII` URLs redirect to the canonical organization URLs; the transfer
+itself changed neither content nor history.
 
 ## Scope and evidence class
 
@@ -30,11 +35,14 @@ organization URLs; the transfer itself changed neither content nor history.
 
 [`PLANNED_PUBLIC_REPOSITORIES.json`](PLANNED_PUBLIC_REPOSITORIES.json) is the
 authoritative point-in-time registry for all seven public Trust Layer
-repositories. It records their exact verified URLs, audited public HEADs and
-trees, successful CI runs and CodeQL evidence. The Master index correctly uses
+repositories. It records exact verified URLs, the five final current component
+HEADs and trees, successful CI runs and CodeQL evidence. The Profile entry is
+explicitly the last completed predecessor observed before this status commit,
+not a current self-binding. The Master index correctly uses
 `N/A_NO_CODEQL_ANALYSIS`: it contains an index verifier and Gitleaks, but no
-CodeQL workflow. The Master binding is deliberately the transferred
-pre-rebind HEAD, avoiding a cyclic claim about a later status-only commit.
+CodeQL workflow. The Master remains deliberately bound to transferred
+pre-rebind HEAD `a8b2cbe1c9e32d5ebdff8cfcba435d7ca9304e1b` until its separately governed
+rebuild.
 
 The first prospective E4 commitment and reveal remains separate and
 `NOT_YET_COMPLETED`. This publication does not enable real payments, token

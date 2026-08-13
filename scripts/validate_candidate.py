@@ -42,40 +42,40 @@ REQUIRED_FILES = {
 
 EXPECTED_REPOSITORY_EVIDENCE = {
     "engine-evidence": {
-        "head": "03516148a5a2345c0bf967598c65194e5c5ea401",
-        "tree": "993d88ee3dbb164a513c8bd392dd3d085b886239",
-        "ci_runs": [31703977937, 31703977901, 31703977831, 31703977872],
-        "codeql_analysis_id": 1613639143,
+        "head": "627f6a87ef8c52d69e7a9b2fd2bf13fa0f7b2c24",
+        "tree": "b42d9d5afebcaae4e01b83ab6f0b5a9e84f9de26",
+        "ci_runs": [31731311519, 31731311555, 31731311595, 31731311543],
+        "codeql_analysis_id": 1615411221,
     },
     "ai-frontend": {
-        "head": "f9192d49d11701c5b1e92efcd7b614922a4dc595",
-        "tree": "54ab7014a3511443e890cfd3e066f7a6aa9605eb",
-        "ci_runs": [31704278130, 31704278127],
-        "codeql_analysis_id": 1613660523,
+        "head": "e751e6e49cdd56a493ce93f1c3026a1ccae625e3",
+        "tree": "8d4347640e20629f090bf116a0eee45a884cbb83",
+        "ci_runs": [31731649324, 31731649355],
+        "codeql_analysis_id": 1615436206,
     },
     "token-portal": {
-        "head": "b26bb211ec1c063e7fa2cdd36d0f085f01f3301a",
-        "tree": "50f27eb376c7ab47469d7c0e1f8e9ad6bc0bf04e",
-        "ci_runs": [31704480279],
-        "codeql_analysis_id": 1613670899,
+        "head": "6c6833dc8ce8f96e688999f15eb48a07be0094c2",
+        "tree": "63a396f9859980701423174d952952bcf7cf14df",
+        "ci_runs": [31732177328],
+        "codeql_analysis_id": 1615466279,
     },
     "platform-api": {
-        "head": "44b9b15d1dbd2e70e3c4db8764f10bbae14c608c",
-        "tree": "187e4b8416e048a505bb59290d9e05b5c610e1bb",
-        "ci_runs": [31705801892],
-        "codeql_analysis_id": 1613761037,
+        "head": "c736ac77166f2aac89cf3b1d0ddd02e4b206ca52",
+        "tree": "b420bd8b8c866b75588744f5100d5eb075c4ddac",
+        "ci_runs": [31732468849],
+        "codeql_analysis_id": 1615482639,
     },
     "corporate-site": {
-        "head": "49ed20aae24b1832081a89f37eeb1007b1c72816",
-        "tree": "64c7423ea2156948c31d64daa4b50cdd348de7b4",
-        "ci_runs": [31706078911, 31706078886],
-        "codeql_analysis_id": 1613778562,
+        "head": "33743aa6af25ae5053cb68ded64a966e953b406b",
+        "tree": "b0ff230818c1415997a16c13a9a11a2ea68ea2a0",
+        "ci_runs": [31732703751, 31732703939],
+        "codeql_analysis_id": 1615496769,
     },
     "github-profile": {
-        "head": "817c6a65eb1ebee78acacf4c3a516aa2fd25c6d6",
-        "tree": "c691e3da06c3d6e0c6e246f53d09e6522eeeecdc",
-        "ci_runs": [31707575973, 31707576106],
-        "codeql_analysis_id": 1613882333,
+        "head": "b9f649dc8d7b2c594815c31ea646b96aefbab1a2",
+        "tree": "c23ff252b5413a82a75ea96240285715cb2bf0b7",
+        "ci_runs": [31733197783, 31733197855],
+        "codeql_analysis_id": 1615527371,
     },
     "trust-layer-master": {
         "head": "a8b2cbe1c9e32d5ebdff8cfcba435d7ca9304e1b",
@@ -239,6 +239,16 @@ def validate() -> list[str]:
             errors.append("repository registry open-review status mismatch")
         if owner_status.get("open_review_matters") != release.get("open_review_matters"):
             errors.append("owner open-review status mismatch")
+        profile = next(
+            (
+                entry
+                for entry in planned
+                if entry.get("candidate") == "github-profile"
+            ),
+            {},
+        ) if isinstance(planned, list) else {}
+        if profile.get("evidence_role") != "OBSERVED_COMPLETED_PREDECESSOR_NOT_CURRENT_SELF_BINDING":
+            errors.append("profile predecessor evidence role mismatch")
         master = planned[-1] if isinstance(planned, list) and planned else {}
         if master.get("verified_public_head") != "a8b2cbe1c9e32d5ebdff8cfcba435d7ca9304e1b":
             errors.append("master public HEAD mismatch")
@@ -249,11 +259,13 @@ def validate() -> list[str]:
     candidate_hash = release.get("public_candidate_sha256")
     if not isinstance(candidate_hash, str) or len(candidate_hash) != 64:
         errors.append("release candidate SHA-256 invalid")
-    if release.get("public_commit_sha") != "817c6a65eb1ebee78acacf4c3a516aa2fd25c6d6":
+    if release.get("public_commit_sha") != "b9f649dc8d7b2c594815c31ea646b96aefbab1a2":
         errors.append("verified profile public commit mismatch")
-    if release.get("public_commit_tree_sha") != "c691e3da06c3d6e0c6e246f53d09e6522eeeecdc":
+    if release.get("public_commit_tree_sha") != "c23ff252b5413a82a75ea96240285715cb2bf0b7":
         errors.append("verified profile public tree mismatch")
-    if release.get("ci_run_id") != 31707575973 or release.get("codeql_analysis_id") != 1613882333:
+    if release.get("public_commit_role") != "OBSERVED_COMPLETED_PREDECESSOR_NOT_CURRENT_SELF_BINDING":
+        errors.append("profile evidence role mismatch")
+    if release.get("ci_run_id") != 31733197783 or release.get("codeql_analysis_id") != 1615527371:
         errors.append("verified profile CI/CodeQL evidence mismatch")
     namespace = release.get("github_namespace", {})
     if (

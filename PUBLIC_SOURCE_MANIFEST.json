@@ -41,8 +41,8 @@
     },
     {
       "path": "CHANGELOG.md",
-      "sha256": "7ecf03462d0d09561a41fd7ca886da5b878f1af9b05fc7558b7887481045893b",
-      "size_bytes": 2383
+      "sha256": "2d1b0788663e2203ea93058993f496b2c1e4d0f2be13b5b9b11bf9e7e66db766",
+      "size_bytes": 3059
     },
     {
       "path": "KNOWN_LIMITATIONS.md",
@@ -66,13 +66,13 @@
     },
     {
       "path": "PLANNED_PUBLIC_REPOSITORIES.json",
-      "sha256": "c623562689ad8612f580396d8e8b810864d5faff466f73c87ae6f3a9dac5dffb",
-      "size_bytes": 9397
+      "sha256": "1a0b2594975a4ee7fb68b575aff1d04d51f20f5928a9cb93a9c28d28d824a2d6",
+      "size_bytes": 9998
     },
     {
       "path": "PUBLICATION_STATUS.md",
-      "sha256": "687913e254824d4151414bb3c3436ea96718cc233d9c3fe0120b643f4a7999e7",
-      "size_bytes": 1585
+      "sha256": "dc415c68eb3c45ab1d4450bff6cea9fd60217c7bac45ef62ad230972c29f61c9",
+      "size_bytes": 2097
     },
     {
       "path": "PUBLIC_PRIVATE_BOUNDARY.md",
@@ -81,13 +81,13 @@
     },
     {
       "path": "README.md",
-      "sha256": "e5a54d7500d9132d1fff3b186f4be45d155c3705adfcac2adfe3f57895502f83",
-      "size_bytes": 3320
+      "sha256": "206fbc546eafea9960628ecb7a2020ebd4b3e1da10823aea39e74c1682fcb306",
+      "size_bytes": 3774
     },
     {
       "path": "RELEASE.json",
-      "sha256": "75542ef1e95a6f3253b98521c9c2f623112fbf24e0915534209c9912679adab4",
-      "size_bytes": 3815
+      "sha256": "5dd95a51398a8ca045d5336b4f290037f37da0abe21e83e879fd4ecfd79ca847",
+      "size_bytes": 3990
     },
     {
       "path": "SBOM.cdx.json",
@@ -106,8 +106,8 @@
     },
     {
       "path": "profile/README.md",
-      "sha256": "69354aa75a8af109b110045b4293d37c96327e9eb21e3e87361ff45eeae8310b",
-      "size_bytes": 3166
+      "sha256": "fc5b62ffd4fabca937335881cd9bfa295d9a3c44f713f91fd5bb167cddee5e7a",
+      "size_bytes": 3426
     },
     {
       "path": "scripts/build_archive.py",
@@ -131,13 +131,13 @@
     },
     {
       "path": "scripts/validate_candidate.py",
-      "sha256": "0aa2119f13a0d39bac0bfc06bfa27f5d05a115204365740bc15facddb074324a",
-      "size_bytes": 17606
+      "sha256": "959e30b5d06918dc51455ee736c34422cd3953337eebbb3e27f15d258786b3dc",
+      "size_bytes": 18176
     },
     {
       "path": "tests/test_candidate.py",
-      "sha256": "8650f86bb20ed4880a36c2c253aed7a2a34e9e5276f05d3a363c976863f44f93",
-      "size_bytes": 7837
+      "sha256": "926ae214566c4838c21f3d9195270681cf233c15d0feb33fe2d5a4e585d18b6c",
+      "size_bytes": 8238
     }
   ],
   "included_file_count": 26,

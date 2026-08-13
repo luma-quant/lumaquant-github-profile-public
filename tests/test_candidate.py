@@ -28,9 +28,13 @@ class ProfileCandidateTests(unittest.TestCase):
         self.assertEqual("COMPLETED", release["repository_creation_status"])
         self.assertTrue(release["publication_performed"])
         self.assertEqual("PUBLIC_REPOSITORY_VERIFIED", release["publication_status"])
-        self.assertEqual("817c6a65eb1ebee78acacf4c3a516aa2fd25c6d6", release["public_commit_sha"])
-        self.assertEqual(31707575973, release["ci_run_id"])
-        self.assertEqual(1613882333, release["codeql_analysis_id"])
+        self.assertEqual("b9f649dc8d7b2c594815c31ea646b96aefbab1a2", release["public_commit_sha"])
+        self.assertEqual(
+            "OBSERVED_COMPLETED_PREDECESSOR_NOT_CURRENT_SELF_BINDING",
+            release["public_commit_role"],
+        )
+        self.assertEqual(31733197783, release["ci_run_id"])
+        self.assertEqual(1615527371, release["codeql_analysis_id"])
         self.assertEqual("luma-quant", release["github_namespace"]["canonical_owner"])
         self.assertFalse(release["github_namespace"]["content_changed_by_transfer"])
         self.assertEqual(
@@ -80,12 +84,12 @@ class ProfileCandidateTests(unittest.TestCase):
     def test_current_public_heads_and_evidence_are_exact(self) -> None:
         plan = json.loads((ROOT / "PLANNED_PUBLIC_REPOSITORIES.json").read_text(encoding="utf-8"))
         expected = {
-            "engine-evidence": ("03516148a5a2345c0bf967598c65194e5c5ea401", 31703977937, 1613639143),
-            "ai-frontend": ("f9192d49d11701c5b1e92efcd7b614922a4dc595", 31704278130, 1613660523),
-            "token-portal": ("b26bb211ec1c063e7fa2cdd36d0f085f01f3301a", 31704480279, 1613670899),
-            "platform-api": ("44b9b15d1dbd2e70e3c4db8764f10bbae14c608c", 31705801892, 1613761037),
-            "corporate-site": ("49ed20aae24b1832081a89f37eeb1007b1c72816", 31706078911, 1613778562),
-            "github-profile": ("817c6a65eb1ebee78acacf4c3a516aa2fd25c6d6", 31707575973, 1613882333),
+            "engine-evidence": ("627f6a87ef8c52d69e7a9b2fd2bf13fa0f7b2c24", 31731311519, 1615411221),
+            "ai-frontend": ("e751e6e49cdd56a493ce93f1c3026a1ccae625e3", 31731649324, 1615436206),
+            "token-portal": ("6c6833dc8ce8f96e688999f15eb48a07be0094c2", 31732177328, 1615466279),
+            "platform-api": ("c736ac77166f2aac89cf3b1d0ddd02e4b206ca52", 31732468849, 1615482639),
+            "corporate-site": ("33743aa6af25ae5053cb68ded64a966e953b406b", 31732703751, 1615496769),
+            "github-profile": ("b9f649dc8d7b2c594815c31ea646b96aefbab1a2", 31733197783, 1615527371),
             "trust-layer-master": ("a8b2cbe1c9e32d5ebdff8cfcba435d7ca9304e1b", 31710806734, None),
         }
         for entry in plan["repositories"]:
@@ -98,6 +102,11 @@ class ProfileCandidateTests(unittest.TestCase):
                 self.assertEqual(analysis, entry["codeql"]["analysis_id"])
                 self.assertEqual(0, entry["codeql"]["results_count"])
                 self.assertEqual(0, entry["codeql"]["open_alert_count"])
+        profile = next(entry for entry in plan["repositories"] if entry["candidate"] == "github-profile")
+        self.assertEqual(
+            "OBSERVED_COMPLETED_PREDECESSOR_NOT_CURRENT_SELF_BINDING",
+            profile["evidence_role"],
+        )
 
     def test_manifested_files_use_canonical_lf_bytes(self) -> None:
         self.assertEqual(b"* text=auto eol=lf\n", (ROOT / ".gitattributes").read_bytes())
