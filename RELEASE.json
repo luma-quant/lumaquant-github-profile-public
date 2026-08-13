@@ -1,13 +1,30 @@
 {
-  "artifact_type": "DOCUMENTATION_PROFILE_CANDIDATE",
+  "artifact_type": "DOCUMENTATION_PROFILE_PUBLIC_STATUS",
   "asset_rights_status": "COMPLETED_OWNER_CONFIRMED_FAIL_CLOSED",
+  "ci_run_id": 31692227539,
+  "ci_run_url": "https://github.com/wotanIII/lumaquant-github-profile-public/actions/runs/31692227539",
+  "ci_status": "PASS_AT_VERIFIED_PUBLIC_HEAD",
+  "codeql_analysis_id": 1612947444,
+  "codeql_open_alert_count": 0,
+  "codeql_results_count": 0,
+  "codeql_run_id": 31692227634,
+  "codeql_run_url": "https://github.com/wotanIII/lumaquant-github-profile-public/actions/runs/31692227634",
+  "codeql_status": "PASS_ZERO_RESULTS_ZERO_OPEN_ALERTS_AT_VERIFIED_PUBLIC_HEAD",
   "deployment_status": "NOT_DEPLOYED",
   "exported_at_utc": "2026-08-13T00:00:00Z",
   "external_publish_authorized": true,
+  "first_prospective_e4": {
+    "included_in_this_publication": false,
+    "status": "NOT_YET_COMPLETED_REQUIRES_FIRST_E4_COMMITMENT_AND_REVEAL"
+  },
   "independent_audit": "NOT_YET_COMPLETED",
   "legal_review": "NOT_YET_COMPLETED",
   "license_status": "PROPRIETARY_SOURCE_AVAILABLE_ALL_RIGHTS_RESERVED",
   "live_domain": null,
+  "open_review_matters": [
+    "LEGAL_REVIEW_NOT_YET_COMPLETED",
+    "INDEPENDENT_THIRD_PARTY_AUDIT_NOT_YET_COMPLETED"
+  ],
   "operator_identity": {
     "brand": "LUMA Quant",
     "founder": "Johann Weitzer",
@@ -18,27 +35,33 @@
   "operator_identity_status": "COMPLETED_OWNER_CONFIRMED",
   "owner_decision_manifest_sha256": "3679dce61727ff0e6a75783cf8b3817bb9c762aa8fe2c95086d0c667476aa196",
   "production_alignment": "REFERENCE_ONLY",
-  "public_candidate_sha256": "0106347b5a0c8e78fe44ffd79a31f428e5fe037ba2117fc2a00cae1e0565b687",
+  "public_candidate_sha256": "a099342548d575514aee832abf3132e59026870a7d0b6ec5a1d7ab14e40b11dd",
   "public_candidate_sha256_scope": "canonical path, size and SHA-256 for every candidate file except RELEASE.json and PUBLIC_SOURCE_MANIFEST.json",
-  "public_commit_sha": null,
+  "public_commit_role": "INITIAL_PUBLICATION_ROOT",
+  "public_commit_sha": "624ea78912e67ebc536d0e270446a9ec77563f31",
+  "public_commit_tree_sha": "ead9651a5c956b0dc02333218dc9ffe3da8889d3",
   "public_release": "0.1.0-rc1",
-  "publication_blockers": [
-    "LEGAL_REVIEW_NOT_YET_COMPLETED",
-    "INDEPENDENT_THIRD_PARTY_AUDIT_NOT_YET_COMPLETED"
-  ],
-  "publication_performed": false,
-  "publication_review_status": "PUBLICATION_REVIEW_READY",
-  "publication_status": "PUBLIC_REPOSITORY_PENDING",
+  "publication_performed": true,
+  "publication_review_status": "INDEPENDENT_PUBLICATION_REVIEW_PASSED",
+  "publication_status": "PUBLIC_REPOSITORY_VERIFIED",
+  "publication_verified_at_utc": "2026-08-13T13:45:32Z",
   "release_class": "REFERENCE_IMPLEMENTATION",
   "repository": "wotanIII/lumaquant-github-profile-public",
-  "repository_creation_status": "PENDING",
+  "repository_creation_status": "COMPLETED",
   "repository_url": "https://github.com/wotanIII/lumaquant-github-profile-public",
-  "repository_visibility": "PUBLIC_REPOSITORY_PENDING",
+  "repository_visibility": "PUBLIC",
+  "runtime_scope": {
+    "automatic_token_delivery_enabled": false,
+    "deployment_in_scope": false,
+    "real_payments_enabled": false,
+    "refund_automation_enabled": false,
+    "token_delivery_enabled": false
+  },
   "schema_version": "1.0.0",
   "security_contact": "security@lumaquant.tech",
   "security_contact_independent_verification": "NOT_PERFORMED",
   "security_contact_status": "COMPLETED_OWNER_CONFIRMED",
   "source_binding_status": "NOT_APPLICABLE",
   "source_private_commit_sha": null,
-  "visibility_status": "PUBLIC_REPOSITORY_PENDING"
+  "visibility_status": "PUBLIC"
 }

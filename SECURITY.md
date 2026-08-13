@@ -2,8 +2,9 @@
 
 ## Supported versions
 
-This documentation-only `v0.1.0-rc1` candidate is supported for publication
-review. Repository creation remains `PENDING`; no public-release claim is made.
+This documentation-only `v0.1.0-rc1` source snapshot is public at
+`wotanIII/lumaquant-github-profile-public`. Its initial public validation and
+CodeQL runs passed. This statement does not claim an independent security audit.
 
 ## Reporting a concern
 

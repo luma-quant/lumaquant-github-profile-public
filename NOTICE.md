@@ -8,5 +8,6 @@ included. Operator identity, asset boundary and security contact are
 owner-confirmed; independent verification was not performed.
 
 Only legal review and the independent third-party audit remain open. This is a
-publication-review candidate; repository creation and publication have not
-occurred.
+public documentation and status repository. Repository creation and initial
+publication are verified; no software deployment or runtime enablement is
+claimed.

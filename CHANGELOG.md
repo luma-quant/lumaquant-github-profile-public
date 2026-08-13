@@ -1,5 +1,20 @@
 # Changelog
 
+## Post-publication status alignment - 2026-08-13
+
+- Recorded all seven Trust Layer repository URLs as public and verified under
+  the owner account `wotanIII`, including the public Master index.
+- Bound the point-in-time public HEADs, trees, successful CI runs and CodeQL
+  evidence; the static Master correctly remains `N/A_NO_CODEQL_ANALYSIS`.
+- Refreshed Engine, AI, Token, API and Corporate status evidence through their
+  latest verified public `main` heads and successful CI/CodeQL records.
+- Added an explicit LF repository policy so manifest hashes are stable across
+  Windows and POSIX checkouts and Git archive/blob extraction.
+- Recorded this profile's initial public root, successful validation and
+  zero-result/zero-open-alert CodeQL analysis.
+- Kept Legal Review and the independent third-party audit open, E4 separate,
+  and all payment, delivery, refund and deployment controls disabled.
+
 ## v0.1.0-rc1 - 2026-08-13
 
 - Prepared the GitHub profile copy for publication review.

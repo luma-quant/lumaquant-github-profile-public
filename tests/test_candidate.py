@@ -11,14 +11,20 @@ ROOT = Path(__file__).resolve().parents[1]
 
 
 class ProfileCandidateTests(unittest.TestCase):
-    def test_release_is_publication_review_ready_without_publish_claim(self) -> None:
+    def test_release_records_verified_publication_without_runtime_claims(self) -> None:
         release = json.loads((ROOT / "RELEASE.json").read_text(encoding="utf-8"))
         self.assertEqual("0.1.0-rc1", release["public_release"])
         self.assertEqual("REFERENCE_IMPLEMENTATION", release["release_class"])
         self.assertEqual("REFERENCE_ONLY", release["production_alignment"])
-        self.assertEqual("PUBLIC_REPOSITORY_PENDING", release["visibility_status"])
-        self.assertEqual("PENDING", release["repository_creation_status"])
-        self.assertFalse(release["publication_performed"])
+        self.assertEqual("PUBLIC", release["visibility_status"])
+        self.assertEqual("COMPLETED", release["repository_creation_status"])
+        self.assertTrue(release["publication_performed"])
+        self.assertEqual("PUBLIC_REPOSITORY_VERIFIED", release["publication_status"])
+        self.assertEqual("624ea78912e67ebc536d0e270446a9ec77563f31", release["public_commit_sha"])
+        self.assertEqual(31692227539, release["ci_run_id"])
+        self.assertEqual(1612947444, release["codeql_analysis_id"])
+        self.assertEqual(0, release["codeql_results_count"])
+        self.assertEqual(0, release["codeql_open_alert_count"])
         self.assertEqual("COMPLETED_OWNER_CONFIRMED", release["operator_identity_status"])
         self.assertEqual("Luma Quant e.U.", release["operator_identity"]["legal_operator"])
         self.assertEqual(
@@ -31,19 +37,55 @@ class ProfileCandidateTests(unittest.TestCase):
                 "LEGAL_REVIEW_NOT_YET_COMPLETED",
                 "INDEPENDENT_THIRD_PARTY_AUDIT_NOT_YET_COMPLETED",
             ],
-            release["publication_blockers"],
+            release["open_review_matters"],
         )
 
-    def test_all_seven_repository_targets_are_pending_and_not_published(self) -> None:
+    def test_all_seven_repository_targets_are_public_and_verified(self) -> None:
         plan = json.loads((ROOT / "PLANNED_PUBLIC_REPOSITORIES.json").read_text(encoding="utf-8"))
         self.assertEqual("wotanIII", plan["account_owner"])
         self.assertEqual("NO_SEPARATE_GITHUB_ORGANIZATION_CONFIRMED", plan["organization_status"])
         self.assertEqual(7, len(plan["repositories"]))
         for entry in plan["repositories"]:
             self.assertTrue(entry["url"].startswith("https://github.com/wotanIII/"))
-            self.assertEqual("PENDING", entry["repository_creation_status"])
-            self.assertEqual("PENDING", entry["url_verification_status"])
-            self.assertFalse(entry["publication_performed"])
+            self.assertEqual("COMPLETED", entry["repository_creation_status"])
+            self.assertEqual("VERIFIED", entry["url_verification_status"])
+            self.assertTrue(entry["publication_performed"])
+            self.assertEqual("PUBLIC", entry["visibility"])
+            self.assertEqual("main", entry["default_branch"])
+            self.assertEqual("PASS_AT_VERIFIED_PUBLIC_HEAD", entry["ci"]["status"])
+        self.assertEqual(
+            "dee8a0466f446602c5de0923eb3700f20c6ca19f",
+            plan["repositories"][-1]["verified_public_head"],
+        )
+        self.assertEqual("N/A_NO_CODEQL_ANALYSIS", plan["repositories"][-1]["codeql"]["status"])
+
+    def test_current_public_heads_and_evidence_are_exact(self) -> None:
+        plan = json.loads((ROOT / "PLANNED_PUBLIC_REPOSITORIES.json").read_text(encoding="utf-8"))
+        expected = {
+            "engine-evidence": ("03516148a5a2345c0bf967598c65194e5c5ea401", 31703977937, 1613639143),
+            "ai-frontend": ("f9192d49d11701c5b1e92efcd7b614922a4dc595", 31704278130, 1613660523),
+            "token-portal": ("b26bb211ec1c063e7fa2cdd36d0f085f01f3301a", 31704480279, 1613670899),
+            "platform-api": ("44b9b15d1dbd2e70e3c4db8764f10bbae14c608c", 31705801892, 1613761037),
+            "corporate-site": ("49ed20aae24b1832081a89f37eeb1007b1c72816", 31706078911, 1613778562),
+            "github-profile": ("624ea78912e67ebc536d0e270446a9ec77563f31", 31692227539, 1612947444),
+            "trust-layer-master": ("dee8a0466f446602c5de0923eb3700f20c6ca19f", 31699097582, None),
+        }
+        for entry in plan["repositories"]:
+            head, first_ci, analysis = expected[entry["candidate"]]
+            self.assertEqual(head, entry["verified_public_head"])
+            self.assertEqual(first_ci, entry["ci"]["runs"][0]["id"])
+            if analysis is None:
+                self.assertEqual("N/A_NO_CODEQL_ANALYSIS", entry["codeql"]["status"])
+            else:
+                self.assertEqual(analysis, entry["codeql"]["analysis_id"])
+                self.assertEqual(0, entry["codeql"]["results_count"])
+                self.assertEqual(0, entry["codeql"]["open_alert_count"])
+
+    def test_manifested_files_use_canonical_lf_bytes(self) -> None:
+        self.assertEqual(b"* text=auto eol=lf\n", (ROOT / ".gitattributes").read_bytes())
+        for path in ROOT.rglob("*"):
+            if path.is_file() and ".git" not in path.relative_to(ROOT).parts:
+                self.assertNotIn(b"\r\n", path.read_bytes(), path.relative_to(ROOT).as_posix())
 
     def test_profile_claims_are_bounded_and_security_contact_is_owner_confirmed(self) -> None:
         profile = (ROOT / "profile" / "README.md").read_text(encoding="utf-8")

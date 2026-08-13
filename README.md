@@ -1,13 +1,14 @@
-# LUMA Quant GitHub profile candidate
+# LUMA Quant GitHub profile
 
-Status: **PUBLICATION_REVIEW_READY / PUBLIC_REPOSITORY_PENDING**  
-Publication performed: **NO**
+Status: **PUBLIC_REPOSITORY_VERIFIED**
+Publication performed: **YES**
 
-This repository is the documentation-only candidate for the planned LUMA Quant
-GitHub profile at
-`https://github.com/wotanIII/lumaquant-github-profile-public`. GitHub repository
-creation and URL verification remain `PENDING`; the URL is owner-approved
-planning metadata, not a claim that the repository is already public.
+This documentation-only repository is public at
+[wotanIII/lumaquant-github-profile-public](https://github.com/wotanIII/lumaquant-github-profile-public).
+The initial public root `624ea78912e67ebc536d0e270446a9ec77563f31`,
+its public CI and its CodeQL analysis were verified on 13 August 2026. The
+repository lives in the owner account `wotanIII`; no separate LUMA Quant GitHub
+organization is asserted.
 
 ## Scope and evidence class
 
@@ -24,19 +25,25 @@ planning metadata, not a claim that the repository is already public.
   no response-time SLA.
 - **Open review matters:** only legal review and independent third-party audit.
 
-## Planned public repository targets
+## Verified public repository index
 
-`PLANNED_PUBLIC_REPOSITORIES.json` is authoritative for all seven targets. Every
-target currently has repository creation `PENDING`, URL verification `PENDING`
-and `publication_performed: false`. The current owner namespace is `wotanIII`;
-no separate LUMA Quant GitHub organization is asserted.
+[`PLANNED_PUBLIC_REPOSITORIES.json`](PLANNED_PUBLIC_REPOSITORIES.json) is the
+authoritative point-in-time registry for all seven public Trust Layer
+repositories. It records their exact verified URLs, audited public HEADs and
+trees, successful CI runs and CodeQL evidence. The Master index correctly uses
+`N/A_NO_CODEQL_ANALYSIS`: it contains an index verifier and Gitleaks, but no
+CodeQL workflow.
+
+The first prospective E4 commitment and reveal remains separate and
+`NOT_YET_COMPLETED`. This publication does not enable real payments, token
+delivery, refund automation or deployment.
 
 ## Public/private boundary
 
-The candidate contains public-intent documentation and local validation tools.
-It excludes product source, private repository history, engine logic, prompts,
-customer or wallet data, credentials, deployment controls, signers, payment
-logic and production configuration. See `PUBLIC_PRIVATE_BOUNDARY.md`.
+This repository contains public documentation and local validation tools. It
+excludes product source, private history, engine logic, prompts, customer or
+wallet data, credentials, deployment controls, signers, payment logic and
+production configuration. See [PUBLIC_PRIVATE_BOUNDARY.md](PUBLIC_PRIVATE_BOUNDARY.md).
 
 ## Build and verification
 
@@ -49,17 +56,11 @@ python -B scripts/validate_candidate.py
 python -B -m unittest discover -s tests -p "test_*.py"
 ```
 
-Build the deterministic publication-review archive outside the candidate:
-
-```text
-python -B scripts/build_archive.py --output-dir ../archives
-```
-
-The validation workflow checks exact manifest closure, release and planned-link
-metadata, boundary and generated-file rules, local secret patterns, unit tests,
-deterministic SBOMs and a pinned Gitleaks scan. CodeQL is prepared for a public
-repository but is not claimed as passed before its public-only job runs.
+The workflow checks exact manifest closure, status metadata, generated-file
+rules, public-boundary conditions, deterministic SBOMs, pinned action
+references, Gitleaks and CodeQL. Source availability remains governed by
+[LICENSE.md](LICENSE.md); public visibility grants no general reuse right.
 
 The company website is [www.lumaquant.tech](https://www.lumaquant.tech/).
-Repository creation, publication, deployment and release creation are not
-performed by this candidate preparation.
+Legal review and an independent third-party audit remain
+`NOT_YET_COMPLETED`; neither is claimed complete.

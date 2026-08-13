@@ -16,7 +16,7 @@
       "properties": [
         {
           "name": "luma:artifact_type",
-          "value": "DOCUMENTATION_PROFILE_CANDIDATE"
+          "value": "DOCUMENTATION_PROFILE_PUBLIC_STATUS"
         },
         {
           "name": "luma:third_party_runtime_component_count",

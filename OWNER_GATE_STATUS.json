@@ -27,7 +27,8 @@
     "independent_verification": "NOT_PERFORMED",
     "response_time_sla": "NOT_CLAIMED"
   },
-  "publication_performed": false,
+  "publication_performed": true,
+  "publication_status": "PUBLIC_REPOSITORY_VERIFIED",
   "open_review_matters": [
     "LEGAL_REVIEW_NOT_YET_COMPLETED",
     "INDEPENDENT_THIRD_PARTY_AUDIT_NOT_YET_COMPLETED"

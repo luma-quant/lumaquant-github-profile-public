@@ -18,6 +18,7 @@ RELEASE_PATH = ROOT / "RELEASE.json"
 DENIED_DIRECTORIES = {".git", ".mypy_cache", ".pytest_cache", ".ruff_cache", "__pycache__", "node_modules"}
 DENIED_SUFFIXES = {".key", ".map", ".p12", ".pem", ".pfx", ".pyc", ".pyo"}
 REQUIRED_FILES = {
+    ".gitattributes",
     ".github/workflows/codeql.yml",
     ".github/workflows/validate-profile.yml",
     "ARCHITECTURE.md",
@@ -39,6 +40,51 @@ REQUIRED_FILES = {
     "profile/README.md",
 }
 
+EXPECTED_REPOSITORY_EVIDENCE = {
+    "engine-evidence": {
+        "head": "03516148a5a2345c0bf967598c65194e5c5ea401",
+        "tree": "993d88ee3dbb164a513c8bd392dd3d085b886239",
+        "ci_runs": [31703977937, 31703977901, 31703977831, 31703977872],
+        "codeql_analysis_id": 1613639143,
+    },
+    "ai-frontend": {
+        "head": "f9192d49d11701c5b1e92efcd7b614922a4dc595",
+        "tree": "54ab7014a3511443e890cfd3e066f7a6aa9605eb",
+        "ci_runs": [31704278130, 31704278127],
+        "codeql_analysis_id": 1613660523,
+    },
+    "token-portal": {
+        "head": "b26bb211ec1c063e7fa2cdd36d0f085f01f3301a",
+        "tree": "50f27eb376c7ab47469d7c0e1f8e9ad6bc0bf04e",
+        "ci_runs": [31704480279],
+        "codeql_analysis_id": 1613670899,
+    },
+    "platform-api": {
+        "head": "44b9b15d1dbd2e70e3c4db8764f10bbae14c608c",
+        "tree": "187e4b8416e048a505bb59290d9e05b5c610e1bb",
+        "ci_runs": [31705801892],
+        "codeql_analysis_id": 1613761037,
+    },
+    "corporate-site": {
+        "head": "49ed20aae24b1832081a89f37eeb1007b1c72816",
+        "tree": "64c7423ea2156948c31d64daa4b50cdd348de7b4",
+        "ci_runs": [31706078911, 31706078886],
+        "codeql_analysis_id": 1613778562,
+    },
+    "github-profile": {
+        "head": "624ea78912e67ebc536d0e270446a9ec77563f31",
+        "tree": "ead9651a5c956b0dc02333218dc9ffe3da8889d3",
+        "ci_runs": [31692227539, 31692227634],
+        "codeql_analysis_id": 1612947444,
+    },
+    "trust-layer-master": {
+        "head": "dee8a0466f446602c5de0923eb3700f20c6ca19f",
+        "tree": "95f212beab546ba945bc8d79451b1edf71587088",
+        "ci_runs": [31699097582],
+        "codeql_analysis_id": None,
+    },
+}
+
 
 def sha256(payload: bytes) -> str:
     return hashlib.sha256(payload).hexdigest()
@@ -58,6 +104,12 @@ def validate() -> list[str]:
     missing_required = REQUIRED_FILES - files.keys()
     if missing_required:
         errors.append("missing required files: " + ", ".join(sorted(missing_required)))
+    attributes = files.get(".gitattributes")
+    if attributes is not None and attributes.read_bytes() != b"* text=auto eol=lf\n":
+        errors.append("canonical LF .gitattributes policy mismatch")
+    for relative, path in files.items():
+        if b"\r\n" in path.read_bytes():
+            errors.append(f"CRLF bytes violate canonical LF policy: {relative}")
 
     for current, directory_names, file_names in os.walk(ROOT, followlinks=False):
         current_path = Path(current)
@@ -85,10 +137,10 @@ def validate() -> list[str]:
     expected_release = {
         "repository": "wotanIII/lumaquant-github-profile-public",
         "repository_url": "https://github.com/wotanIII/lumaquant-github-profile-public",
-        "repository_creation_status": "PENDING",
+        "repository_creation_status": "COMPLETED",
         "public_release": "0.1.0-rc1",
         "live_domain": None,
-        "artifact_type": "DOCUMENTATION_PROFILE_CANDIDATE",
+        "artifact_type": "DOCUMENTATION_PROFILE_PUBLIC_STATUS",
         "release_class": "REFERENCE_IMPLEMENTATION",
         "source_private_commit_sha": None,
         "production_alignment": "REFERENCE_ONLY",
@@ -99,19 +151,19 @@ def validate() -> list[str]:
         "security_contact": "security@lumaquant.tech",
         "security_contact_status": "COMPLETED_OWNER_CONFIRMED",
         "deployment_status": "NOT_DEPLOYED",
-        "publication_review_status": "PUBLICATION_REVIEW_READY",
-        "publication_status": "PUBLIC_REPOSITORY_PENDING",
-        "publication_performed": False,
-        "visibility_status": "PUBLIC_REPOSITORY_PENDING",
+        "publication_review_status": "INDEPENDENT_PUBLICATION_REVIEW_PASSED",
+        "publication_status": "PUBLIC_REPOSITORY_VERIFIED",
+        "publication_performed": True,
+        "visibility_status": "PUBLIC",
     }
     for key, value in expected_release.items():
         if release.get(key) != value:
             errors.append(f"release field mismatch: {key}")
-    if release.get("publication_blockers") != [
+    if release.get("open_review_matters") != [
         "LEGAL_REVIEW_NOT_YET_COMPLETED",
         "INDEPENDENT_THIRD_PARTY_AUDIT_NOT_YET_COMPLETED",
     ]:
-        errors.append("release publication blockers mismatch")
+        errors.append("release open review matters mismatch")
 
     try:
         repositories = json.loads((ROOT / "PLANNED_PUBLIC_REPOSITORIES.json").read_text(encoding="utf-8"))
@@ -133,19 +185,71 @@ def validate() -> list[str]:
         if not isinstance(planned, list) or [entry.get("url") for entry in planned] != expected_urls:
             errors.append("planned public repository URLs mismatch")
         elif any(
-            entry.get("repository_creation_status") != "PENDING"
-            or entry.get("url_verification_status") != "PENDING"
-            or entry.get("publication_performed") is not False
+            entry.get("repository_creation_status") != "COMPLETED"
+            or entry.get("url_verification_status") != "VERIFIED"
+            or entry.get("publication_performed") is not True
+            or entry.get("visibility") != "PUBLIC"
+            or entry.get("default_branch") != "main"
+            or entry.get("ci", {}).get("status") != "PASS_AT_VERIFIED_PUBLIC_HEAD"
             for entry in planned
         ):
-            errors.append("planned public repository status mismatch")
-        if owner_status.get("open_review_matters") != release.get("publication_blockers"):
+            errors.append("verified public repository status mismatch")
+        if isinstance(planned, list):
+            for entry in planned:
+                expected = EXPECTED_REPOSITORY_EVIDENCE.get(entry.get("candidate"))
+                if expected is None:
+                    errors.append(f"unexpected repository evidence record: {entry.get('candidate')}")
+                    continue
+                if entry.get("verified_public_head") != expected["head"]:
+                    errors.append(f"verified public HEAD mismatch: {entry.get('candidate')}")
+                if entry.get("verified_public_tree") != expected["tree"]:
+                    errors.append(f"verified public tree mismatch: {entry.get('candidate')}")
+                run_ids = [run.get("id") for run in entry.get("ci", {}).get("runs", [])]
+                if run_ids != expected["ci_runs"] or any(
+                    run.get("conclusion") != "success" for run in entry.get("ci", {}).get("runs", [])
+                ):
+                    errors.append(f"verified public CI evidence mismatch: {entry.get('candidate')}")
+                codeql = entry.get("codeql", {})
+                if expected["codeql_analysis_id"] is None:
+                    if codeql.get("status") != "N/A_NO_CODEQL_ANALYSIS" or "analysis_id" in codeql:
+                        errors.append(f"CodeQL applicability mismatch: {entry.get('candidate')}")
+                elif (
+                    codeql.get("analysis_id") != expected["codeql_analysis_id"]
+                    or codeql.get("status") != "PASS_ZERO_RESULTS_ZERO_OPEN_ALERTS"
+                    or codeql.get("results_count") != 0
+                    or codeql.get("open_alert_count") != 0
+                ):
+                    errors.append(f"verified CodeQL evidence mismatch: {entry.get('candidate')}")
+        if repositories.get("open_review_matters") != release.get("open_review_matters"):
+            errors.append("repository registry open-review status mismatch")
+        if owner_status.get("open_review_matters") != release.get("open_review_matters"):
             errors.append("owner open-review status mismatch")
+        master = planned[-1] if isinstance(planned, list) and planned else {}
+        if master.get("verified_public_head") != "dee8a0466f446602c5de0923eb3700f20c6ca19f":
+            errors.append("master public HEAD mismatch")
+        if master.get("codeql", {}).get("status") != "N/A_NO_CODEQL_ANALYSIS":
+            errors.append("master CodeQL applicability mismatch")
         if asset_inventory.get("asset_count") != 0 or asset_inventory.get("unresolved_asset_count") != 0:
             errors.append("zero-asset inventory mismatch")
     candidate_hash = release.get("public_candidate_sha256")
     if not isinstance(candidate_hash, str) or len(candidate_hash) != 64:
         errors.append("release candidate SHA-256 invalid")
+    if release.get("public_commit_sha") != "624ea78912e67ebc536d0e270446a9ec77563f31":
+        errors.append("verified profile public commit mismatch")
+    if release.get("public_commit_tree_sha") != "ead9651a5c956b0dc02333218dc9ffe3da8889d3":
+        errors.append("verified profile public tree mismatch")
+    if release.get("ci_run_id") != 31692227539 or release.get("codeql_analysis_id") != 1612947444:
+        errors.append("verified profile CI/CodeQL evidence mismatch")
+    if release.get("codeql_results_count") != 0 or release.get("codeql_open_alert_count") != 0:
+        errors.append("profile CodeQL zero evidence mismatch")
+    if release.get("first_prospective_e4", {}).get("included_in_this_publication") is not False:
+        errors.append("E4 must remain separate from this publication")
+    runtime = release.get("runtime_scope", {})
+    if any(runtime.get(key) is not False for key in (
+        "real_payments_enabled", "token_delivery_enabled", "automatic_token_delivery_enabled",
+        "refund_automation_enabled", "deployment_in_scope",
+    )):
+        errors.append("runtime scope must remain disabled")
 
     manifest_entries = manifest.get("files")
     if not isinstance(manifest_entries, list):

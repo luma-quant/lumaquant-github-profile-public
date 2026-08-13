@@ -24,6 +24,6 @@
 The export must fail if a symlink, denied generated file, local absolute path or
 unmanifested file is introduced.
 
-The candidate contains zero binary/media assets. Its fail-closed inventory has
+The repository contains zero binary/media assets. Its fail-closed inventory has
 zero unresolved entries. Operator identity, license and security contact are
 owner-confirmed; legal review and independent third-party audit remain open.

@@ -1,17 +1,18 @@
 # Known limitations
 
-- The repository namespace is the owner account `wotanIII`; no separate LUMA
-  Quant GitHub organization is asserted.
-- All seven repository URLs are approved targets with creation and verification
-  still `PENDING`; they must not be represented as live before verification.
-- This is a documentation reference candidate, not a production source mirror.
+- The public namespace is the owner account `wotanIII`; no separate LUMA Quant
+  GitHub organization is asserted.
+- The seven repository records are a point-in-time verification snapshot. A
+  later commit does not invalidate the recorded audited publication HEAD.
+- Manifested text bytes are canonical LF bytes under `.gitattributes`; this is
+  part of the reproducibility boundary.
+- This is a documentation reference repository, not a production source mirror.
 - Legal review and independent third-party audit are `NOT_YET_COMPLETED`.
 - Operator identity, asset rights and mailbox status are owner-confirmed, not
   independently verified.
-- CodeQL is prepared but has not run in a final public repository.
-- Engine Evidence E4 is separately governed and its pending public target is not
-  an operational blocker for this documentation candidate.
+- The Master index has no CodeQL workflow; its correct status is
+  `N/A_NO_CODEQL_ANALYSIS`, while its index-verifier and Gitleaks jobs passed.
+- Engine Evidence E4 is separately governed and remains `NOT_YET_COMPLETED`.
 - The Token Portal reference boundary disables real payments and token delivery.
-
-These limitations do not claim that repository creation or publication has
-already occurred.
+- No deployment, DNS change, tag or GitHub Release is claimed by this status
+  alignment.

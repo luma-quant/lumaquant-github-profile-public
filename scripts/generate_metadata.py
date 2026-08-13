@@ -38,13 +38,21 @@ def digest_bytes(payload: bytes) -> str:
     return hashlib.sha256(payload).hexdigest()
 
 
+def lf_blob_bytes(path: Path) -> bytes:
+    """Return the canonical checkout bytes committed under the LF policy."""
+    payload = path.read_bytes()
+    if b"\r\n" in payload:
+        raise ValueError(f"CRLF bytes violate canonical LF policy: {path.relative_to(ROOT).as_posix()}")
+    return payload
+
+
 def candidate_product_digest() -> str:
     digest = hashlib.sha256()
     for path in files_except_manifest():
         relative = path.relative_to(ROOT).as_posix()
         if relative in PRODUCT_DIGEST_EXCLUSIONS:
             continue
-        payload = path.read_bytes()
+        payload = lf_blob_bytes(path)
         record = f"{relative}\0{len(payload)}\0{digest_bytes(payload)}\n".encode("utf-8")
         digest.update(record)
     return digest.hexdigest()
@@ -58,7 +66,7 @@ def expected_documents() -> tuple[bytes, bytes]:
     entries = []
     for path in files_except_manifest():
         relative = path.relative_to(ROOT).as_posix()
-        payload = release_bytes if relative == RELEASE_PATH.name else path.read_bytes()
+        payload = release_bytes if relative == RELEASE_PATH.name else lf_blob_bytes(path)
         entries.append(
             {
                 "path": relative,
@@ -93,7 +101,7 @@ def expected_documents() -> tuple[bytes, bytes]:
             "license": release["license_status"],
             "asset_rights": release["asset_rights_status"],
             "security_contact": release["security_contact_status"],
-            "open_review_matters": release["publication_blockers"],
+            "open_review_matters": release["open_review_matters"],
         },
         "schema_version": "1.0.0",
         "source_private_commit_sha": release["source_private_commit_sha"],
